@@ -25,6 +25,8 @@ export const VALIDATE = {
     )
     .max(30),
   email: Joi.string().required().email().max(80),
+  password: Joi.string().required().min(5).max(10),
+  confirmPassword: Joi.string().required().min(5).max(10),
 
   phone_number: Joi.string()
     .optional()

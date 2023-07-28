@@ -1,23 +1,21 @@
-export const signup = async (req, res, next) => {
-  const { email, country_id, institution_id, initial_name } = req.value.body;
+import { findUserByEmail } from '../models/user.model.js';
+import { isEmptyObject } from '../shared/index.js';
 
-  const physician = {
+export const signup = async (req, res, next) => {
+  const { email } = req.value.body;
+
+  const user = {
     email: encodeURIComponent(email).toLowerCase(),
   };
-  const physician_id = undefined;
 
   let err = {};
 
-  const emailExists = await physicianModel.email_exists(
-    physician.email,
-    physician_id
-  );
+  const emailExists = await findUserByEmail(user.email);
   if (emailExists.success) {
     err.email = 'Email already exists';
   }
 
-
-  if (common.isEmptyObj(err)) {
+  if (isEmptyObject(err)) {
     next();
   } else {
     let return_err = { status: 2, errors: err };
