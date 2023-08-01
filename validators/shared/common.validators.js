@@ -1,6 +1,6 @@
 import Joi from 'joi';
 export const VALIDATE = {
-  first_name: Joi.string()
+  firstName: Joi.string()
     .required()
     .min(1)
     .regex(
@@ -8,7 +8,7 @@ export const VALIDATE = {
       'Only Alphabets are allowed, Please avoid adding white space, number or special characters'
     )
     .max(30),
-  middle_name: Joi.string()
+  middleName: Joi.string()
     .required()
     .min(1)
     .regex(
@@ -16,7 +16,7 @@ export const VALIDATE = {
       'Only Alphabets are allowed, Please avoid adding white space, number or special characters'
     )
     .max(30),
-  last_name: Joi.string()
+  lastName: Joi.string()
     .required()
     .min(1)
     .regex(
@@ -25,8 +25,10 @@ export const VALIDATE = {
     )
     .max(30),
   email: Joi.string().required().email().max(80),
+  password: Joi.string().required().min(5).max(10),
+  confirmPassword: Joi.string().required().min(5).max(10),
 
-  phone_number: Joi.string()
+  phoneNumber: Joi.string()
     .optional()
     .min(10)
     .regex(/^[0-9]*$/, 'alphanumeric and space not allowed')
