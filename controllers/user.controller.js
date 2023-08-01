@@ -1,9 +1,16 @@
-import { userModel } from '../models/index.js';
 import pkg from 'jsonwebtoken';
 const { sign } = pkg;
 import CryptoJS from 'crypto-js';
 import { hashSync, genSaltSync, compareSync } from 'bcrypt';
 import { isEmptyArray } from '../shared/index.js';
+import {
+  createUser,
+  deleteUserById,
+  findUserByEmail,
+  findUserById,
+  listAllUser,
+  updateUserById,
+} from '../models/user.model.js';
 
 function decryptData(encryptedData, key) {
   const bytes = CryptoJS.AES.decrypt(encryptedData, key);
@@ -19,7 +26,7 @@ export default {
   login: async (req, res) => {
     try {
       const { username: email, password } = req.body;
-      const { data } = await userModel.findUserByEmail(email);
+      const { data } = await findUserByEmail(email);
       const results = data.rows;
       if (!results) {
         return res.json({
@@ -96,26 +103,37 @@ export default {
 
   createUser: async (req, res) => {
     try {
-      const { first_name, middle_name, last_name, email } = req.body;
-      await userModel.createUser({
-        first_name,
-        middle_name,
-        last_name,
+      const {
+        confirmPassword,
         email,
+        firstName,
+        lastName,
+        middleName,
+        password,
+      } = req.body;
+
+      await createUser({
+        email,
+        password,
+        firstName,
+        lastName,
+        middleName,
       });
-      res.status(200).send({ status: 1, message: 'User Created Successfully' });
+
+      res.status(201).send({data:{ status: 1, message: 'User Created Successfully' }});
     } catch (err) {
-      console.log(err);
-      res
-        .status(400)
-        .send({ status: 0, message: 'Unable To Create User', err });
+      console.error(err);
+      res.status(500).send({
+        status: 0,
+        message: 'Unable To Create User',
+        error: err.message,
+      });
     }
   },
-
   listAllUser: async (req, res) => {
     console.log('reaching here');
     try {
-      const { data } = await userModel.listAllUser();
+      const { data } = await listAllUser();
       const count = data.rowCount;
       const user = data.rows;
       res.status(200).send({ status: 1, user, count });
@@ -128,7 +146,7 @@ export default {
   findUserById: async (req, res) => {
     try {
       const user_id = parseInt(req.params.id);
-      const { data } = await userModel.findUserById(user_id);
+      const { data } = await findUserById(user_id);
       const count = data.rowCount;
       const user = data.rows;
       res.status(200).send({ status: 1, user, count });
@@ -143,7 +161,7 @@ export default {
       const user_id = parseInt(req.params.id);
       const { first_name, last_name } = req.body;
       const userDetails = { first_name, last_name, user_id };
-      const { data } = await userModel.updateUserById(userDetails);
+      const { data } = await updateUserById(userDetails);
       const { rows, rowCount } = data;
       if (rows && rowCount) {
         return res
@@ -165,7 +183,7 @@ export default {
   deleteUserById: async (req, res) => {
     try {
       const user_id = parseInt(req.params.id);
-      const { data } = await userModel.deleteUserById(user_id);
+      const { data } = await deleteUserById(user_id);
       if (!isEmptyArray(data.rows)) {
         return res
           .status(200)

@@ -40,11 +40,12 @@ export const validateParam = (schema) => {
 };
 export const schemas = {
   signup: Joi.object().keys({
-    first_name: VALIDATE.first_name,
-    middle_name: VALIDATE.middle_name,
-    last_name: VALIDATE.last_name,
+    firstName: VALIDATE.firstName,
+    middleName: VALIDATE.middleName,
+    lastName: VALIDATE.lastName,
     email: VALIDATE.email,
-    phone_number: VALIDATE.phone_number,
+    password: VALIDATE.password,
+    confirmPassword: VALIDATE.confirmPassword,
   }),
   delete_validation: Joi.object().keys({
     id: Joi.number().required(),

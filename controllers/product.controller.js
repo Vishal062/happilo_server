@@ -1,4 +1,3 @@
-import { productModel } from '../models/index.js';
 import { isEmptyArray } from '../shared/index.js';
 export default {
   createProduct: async (req, res) => {
