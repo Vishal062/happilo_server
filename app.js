@@ -7,6 +7,7 @@ const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use('/public/uploads', express.static('/public/uploads'));
 app.use(express.json({ type: 'application/vnd.api+json' }));
 app.use(cors());
 
