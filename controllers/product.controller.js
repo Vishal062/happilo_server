@@ -1,8 +1,16 @@
+import {
+  createProduct,
+  deleteProductById,
+  findProductById,
+  listAllProducts,
+  updateProductById,
+} from '../models/product.model.js';
 import { isEmptyArray } from '../shared/index.js';
 export default {
   createProduct: async (req, res) => {
+    console.log({ file: req.files });
     try {
-      await productModel.createProduct(req.body);
+      await createProduct(req.body);
       res
         .status(200)
         .send({ status: 1, message: 'Product Created Successfully' });
@@ -15,10 +23,13 @@ export default {
 
   listAllProducts: async (req, res) => {
     try {
-      const { data } = await productModel.listAllProducts();
+      const { data } = await listAllProducts();
       const count = data.rowCount;
       const products = data.rows;
       res.status(200).send({ status: 1, products, count });
+      res
+        .status(200)
+        .send({ status: 1, message: 'Product Created Successfully' });
     } catch (err) {
       res
         .status(400)
@@ -29,10 +40,13 @@ export default {
   findProductById: async (req, res) => {
     try {
       const product_id = parseInt(req.params.id);
-      const { data } = await productModel.findProductById(product_id);
+      const { data } = await findProductById(product_id);
       const count = data.rowCount;
       const products = data.rows;
       res.status(200).send({ status: 1, products, count });
+      res
+        .status(200)
+        .send({ status: 1, message: 'Product Created Successfully' });
     } catch (err) {
       res
         .status(400)
@@ -50,7 +64,7 @@ export default {
         price,
         product_id,
       };
-      const { data } = await productModel.updateProductById(productDetails);
+      const { data } = await updateProductById(productDetails);
       const { rows, rowCount } = data;
       if (rows && rowCount) {
         return res.status(200).send({
@@ -73,7 +87,7 @@ export default {
   deleteProductById: async (req, res) => {
     try {
       const product_id = parseInt(req.params.id);
-      const { data } = await productModel.deleteProductById(product_id);
+      const { data } = await deleteProductById(product_id);
       if (!isEmptyArray(data.rows)) {
         return res.status(200).send({
           status: 1,

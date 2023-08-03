@@ -1,7 +1,5 @@
 import Router from 'express-promise-router';
-
 import { productController } from '../controllers/index.js';
-
 const router = Router();
 
 router.post('/', productController.createProduct);
