@@ -5,6 +5,7 @@ import {
   getBanner,
   getBrandLogo,
 } from '../models/brand.model.js';
+import { logError } from '../shared/helper/common.js';
 import { MESSAGE, STATUS } from '../shared/messages/constant.js';
 
 export default {
@@ -20,7 +21,7 @@ export default {
       });
     } catch (err) {
       // Respond with 400 Bad Request for any errors during brand logo addition
-      console.error('Failed to add brand logo:', err);
+      logError(err);
       res.status(STATUS.BAD_REQUEST).send({
         status: STATUS.FAILURE,
         message: MESSAGE.ADDED_FAILURE,
@@ -44,7 +45,7 @@ export default {
       });
     } catch (err) {
       // Respond with 400 Bad Request for any errors during banner additions
-      console.error('Failed to add banners:', err);
+      logError(err);
       res.status(STATUS.BAD_REQUEST).send({
         status: STATUS.FAILURE,
         message: MESSAGE.ADDED_FAILURE,
@@ -63,7 +64,7 @@ export default {
       });
     } catch (err) {
       // Respond with 500 Internal Server Error for any unexpected errors
-      console.error('Failed to fetch brand logo:', err);
+      logError(err);
       res.status(STATUS.INTERNAL_SERVER_ERROR).send({
         status: STATUS.FAILURE,
         message: MESSAGE.FETCH_FAILURE,
@@ -82,7 +83,7 @@ export default {
       });
     } catch (err) {
       // Respond with 500 Internal Server Error for any unexpected errors
-      console.error('Failed to fetch banners:', err);
+      logError(err);
       res.status(STATUS.INTERNAL_SERVER_ERROR).send({
         status: STATUS.FAILURE,
         message: MESSAGE.FETCH_FAILURE,

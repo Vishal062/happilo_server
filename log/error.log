@@ -1,0 +1,56 @@
+[2023-08-04T09:03:48.097Z] ReferenceError: getBrandLogos is not defined
+    at getBrandLogo (file:///D:/desktop/happilo/server/controllers/brand.controller.js:58:34)
+    at handleReturn (D:\desktop\happilo\server\node_modules\express-promise-router\lib\express-promise-router.js:24:23)
+    at getBrandLogo (D:\desktop\happilo\server\node_modules\express-promise-router\lib\express-promise-router.js:64:7)
+    at handleReturn (D:\desktop\happilo\server\node_modules\express-promise-router\lib\express-promise-router.js:24:23)
+    at getBrandLogo (D:\desktop\happilo\server\node_modules\express-promise-router\lib\express-promise-router.js:64:7)
+    at Layer.handle [as handle_request] (D:\desktop\happilo\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\desktop\happilo\server\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (D:\desktop\happilo\server\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (D:\desktop\happilo\server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\desktop\happilo\server\node_modules\express\lib\router\index.js:284:15
+[2023-08-04T09:04:13.391Z] R
+[2023-08-04T09:07:56.438Z] ReferenceError: getBrandLogos is not defined
+    at getBrandLogo (file:///D:/desktop/happilo/server/controllers/brand.controller.js:58:34)
+    at handleReturn (D:\desktop\happilo\server\node_modules\express-promise-router\lib\express-promise-router.js:24:23)
+    at getBrandLogo (D:\desktop\happilo\server\node_modules\express-promise-router\lib\express-promise-router.js:64:7)
+    at handleReturn (D:\desktop\happilo\server\node_modules\express-promise-router\lib\express-promise-router.js:24:23)
+    at getBrandLogo (D:\desktop\happilo\server\node_modules\express-promise-router\lib\express-promise-router.js:64:7)
+    at Layer.handle [as handle_request] (D:\desktop\happilo\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\desktop\happilo\server\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (D:\desktop\happilo\server\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (D:\desktop\happilo\server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\desktop\happilo\server\node_modules\express\lib\router\index.js:284:15
+[2023-08-04T09:08:56.235Z] ReferenceError: getBrandLogos is not defined
+    at getBrandLogo (file:///D:/desktop/happilo/server/controllers/brand.controller.js:58:34)
+    at handleReturn (D:\desktop\happilo\server\node_modules\express-promise-router\lib\express-promise-router.js:24:23)
+    at getBrandLogo (D:\desktop\happilo\server\node_modules\express-promise-router\lib\express-promise-router.js:64:7)
+    at handleReturn (D:\desktop\happilo\server\node_modules\express-promise-router\lib\express-promise-router.js:24:23)
+    at getBrandLogo (D:\desktop\happilo\server\node_modules\express-promise-router\lib\express-promise-router.js:64:7)
+    at Layer.handle [as handle_request] (D:\desktop\happilo\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\desktop\happilo\server\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (D:\desktop\happilo\server\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (D:\desktop\happilo\server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\desktop\happilo\server\node_modules\express\lib\router\index.js:284:15
+[2023-08-04T09:10:45.762Z] ReferenceError: getBrandLogos is not defined
+    at getBrandLogo (file:///D:/desktop/happilo/server/controllers/brand.controller.js:58:34)
+    at handleReturn (D:\desktop\happilo\server\node_modules\express-promise-router\lib\express-promise-router.js:24:23)
+    at getBrandLogo (D:\desktop\happilo\server\node_modules\express-promise-router\lib\express-promise-router.js:64:7)
+    at handleReturn (D:\desktop\happilo\server\node_modules\express-promise-router\lib\express-promise-router.js:24:23)
+    at getBrandLogo (D:\desktop\happilo\server\node_modules\express-promise-router\lib\express-promise-router.js:64:7)
+    at Layer.handle [as handle_request] (D:\desktop\happilo\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\desktop\happilo\server\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (D:\desktop\happilo\server\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (D:\desktop\happilo\server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\desktop\happilo\server\node_modules\express\lib\router\index.js:284:15
+[2023-08-04T09:12:54.219Z] ReferenceError: getBrandLogos is not defined
+    at getBrandLogo (file:///D:/desktop/happilo/server/controllers/brand.controller.js:58:34)
+    at handleReturn (D:\desktop\happilo\server\node_modules\express-promise-router\lib\express-promise-router.js:24:23)
+    at getBrandLogo (D:\desktop\happilo\server\node_modules\express-promise-router\lib\express-promise-router.js:64:7)
+    at handleReturn (D:\desktop\happilo\server\node_modules\express-promise-router\lib\express-promise-router.js:24:23)
+    at getBrandLogo (D:\desktop\happilo\server\node_modules\express-promise-router\lib\express-promise-router.js:64:7)
+    at Layer.handle [as handle_request] (D:\desktop\happilo\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\desktop\happilo\server\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (D:\desktop\happilo\server\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (D:\desktop\happilo\server\node_modules\express\lib\router\layer.js:95:5)
+    at D:\desktop\happilo\server\node_modules\express\lib\router\index.js:284:15
