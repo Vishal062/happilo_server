@@ -37,7 +37,7 @@ const fileUploader = (req, res, uploadDir, callback) => {
         }
 
         try {
-          let fileExt = path.extname(originalFilename); // Get the file extension from the original name
+          const fileExt = path.extname(originalFilename); // Get the file extension from the original name
 
           if (!fileExt) {
             // If the original filename doesn't have an extension, extract from the mimetype
@@ -50,7 +50,10 @@ const fileUploader = (req, res, uploadDir, callback) => {
           const newLocation = path.join(uploadDir, uniqueFileName);
           await fs.rename(filepath, newLocation);
 
-          filePromises.push({ originalFilename, newFileName: uniqueFileName });
+          filePromises.push({
+            originalFilename: originalFilename,
+            newFileName: uniqueFileName,
+          });
         } catch (err) {
           console.error('Error moving file:', err);
         }
@@ -58,7 +61,6 @@ const fileUploader = (req, res, uploadDir, callback) => {
     }
 
     // All file uploads have been processed
-    console.log({ successfulFiles: filePromises });
 
     // Call the callback with the results
     return callback(null, filePromises);

@@ -4,12 +4,12 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const pool = new Pool({
+export const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
 });
 
 pool.on('connect', () => {
-  console.log('Connection request made with with database Successfully!');
+  console.log('Connection request made with the database Successfully!');
 });
 
 const query = (text, params) => pool.query(text, params);
