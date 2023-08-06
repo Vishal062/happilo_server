@@ -1,0 +1,53 @@
+Sellers:
+This table stores information about the sellers who offer their products on the platform. It includes details such as the seller's name, email, and contact phone number.
+
+Categories:
+The Categories table maintains a list of product categories. Each category is identified by a unique CategoryID and includes a CategoryName to classify products into specific groups.
+
+Products:
+The Products table holds information about individual products available on the platform. It includes attributes like the product's name, description, base price, and a reference to its corresponding category.
+
+Stock:
+This table tracks the stock availability of products offered by sellers. It ensures that the available quantity of a product from a specific seller is accurately managed and updated.
+
+Discounts:
+The Discounts table manages discounts applied to products by sellers. It includes attributes such as the discount percentage, start date, end date, and links to the respective product and seller.
+
+Images:
+Images associated with products are stored in the Images table. Each product can have multiple images linked to it using unique ImageIDs and ImageURLs.
+
+Customers:
+The Customers table stores customer details required for order processing and communication. It includes information such as the customer's first name, last name, email address, and contact phone number.
+
+Addresses:
+This table allows customers to store multiple addresses associated with their accounts. It includes information about the type of address (e.g., home, work), street address, city, state, postal code, and country.
+
+Areas:
+The Areas table represents specific geographic regions where product availability may vary. It contains details like the area's name, city, state, postal code, and country.
+
+Area_Product_Availability:
+This table records the availability of products in different areas. It links products, sellers, and areas, and tracks the available quantity of each product in a specific area.
+
+Orders:
+The Orders table stores information about customer orders. Each order is associated with a customer, an order date, and the total amount of the order.
+
+Order_Items:
+This table contains details about the items included in each order. It links orders to products and sellers, along with quantities, subtotals, and applied discounts.
+
+Ratings:
+Ratings and reviews provided by customers for products and sellers are stored in the Ratings table. It includes attributes like the rating value and review text, along with links to the respective product, customer, and seller.
+
+Cart:
+The Cart table represents the active shopping cart of each customer. It allows customers to add products for purchase before finalizing their order.
+
+Cart_Items:
+This table records the items added to customers' shopping carts. It links products, sellers, and quantities to the corresponding cart.
+
+Wishlist:
+The Wishlist table enables customers to save products they are interested in for future consideration.
+
+Wishlist_Items:
+This table links products to customers' wishlists, allowing them to track desired items for potential future purchase.
+
+Reasons_To_Buy:
+The Reasons_To_Buy table provides customers with the option to provide reasons for purchasing specific products. It allows customers to express their motivations for buying certain items.

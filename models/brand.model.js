@@ -1,96 +1,106 @@
-// brand.model.js
 import { pool } from '../config/database.js';
-import { STATUS, TRANSACTION_STATUS } from '../shared/messages/constant.js';
+import { TRANSACTION_STATUS, STATUS } from '../shared/messages/constant.js';
+import {
+  SQL_INSERT_IMAGE,
+  SQL_UPDATE_BRAND_LOGO,
+  SQL_INSERT_BRAND_LOGO,
+  SQL_SELECT_BRAND_LOGO,
+  SQL_SELECT_BANNER,
+  SQL_INSERT_BANNER,
+} from '../sql/brand.sql.js';
 
+// Add a brand logo along with associated operations
 export const addBrandLogo = async (brandLogoDetails, status = 1) => {
   const client = await pool.connect();
 
   try {
     await client.query(TRANSACTION_STATUS.BEGIN);
 
-    // Set existing brand logos to failure status before inserting a new one
-    await client.query(
-      'UPDATE tbl_brand_logo SET status = $1 WHERE status = $2',
-      [STATUS.FAILURE, status]
-    );
-
-    const queryText = `
-      INSERT INTO tbl_brand_logo (original_name, name, status, date_added)
-      VALUES ($1, $2, $3, $4)
-      RETURNING *`;
-
-    const values = [
+    // Insert the image into tbl_image
+    const {
+      rows: [imageId],
+    } = await client.query(SQL_INSERT_IMAGE, [
       brandLogoDetails.originalFilename,
       brandLogoDetails.newFileName,
-      status,
       new Date(),
-    ];
+    ]);
 
+    // Update existing brand logos to failure status
+    await client.query(SQL_UPDATE_BRAND_LOGO, [
+      STATUS.FAILURE,
+      status,
+      imageId.id,
+    ]);
+
+    // Insert new brand logo with image reference
     const {
       rows: [data],
-    } = await client.query(queryText, values);
+    } = await client.query(SQL_INSERT_BRAND_LOGO, [
+      imageId.id,
+      status,
+      new Date(),
+    ]);
 
     await client.query(TRANSACTION_STATUS.COMMIT);
 
     return data;
   } catch (err) {
     await client.query(TRANSACTION_STATUS.ROLLBACK);
-    throw { status: STATUS.FAILURE, err };
+    throw err;
   } finally {
     client.release();
   }
 };
 
+// Add a banner along with associated image
 export const addBanner = async (bannerDetails, status = 1) => {
-  try {
-    const queryText = `
-      INSERT INTO tbl_banner (original_name, name, status, date_added)
-      VALUES ($1, $2, $3, $4)
-      RETURNING *`;
+  const client = await pool.connect();
 
-    const values = [
+  try {
+    await client.query(TRANSACTION_STATUS.BEGIN);
+
+    // Insert the image into tbl_image
+    const {
+      rows: [imageId],
+    } = await client.query(SQL_INSERT_IMAGE, [
       bannerDetails.originalFilename,
       bannerDetails.newFileName,
-      status,
       new Date(),
-    ];
+    ]);
 
+    // Insert banner with associated image
     const {
       rows: [data],
-    } = await pool.query(queryText, values);
+    } = await client.query(SQL_INSERT_BANNER, [imageId.id, status, new Date()]);
 
+    await client.query(TRANSACTION_STATUS.COMMIT);
     return data;
   } catch (err) {
-    throw { status: STATUS.FAILURE, err };
+    await client.query(TRANSACTION_STATUS.ROLLBACK);
+    throw err;
+  } finally {
+    client.release();
   }
 };
 
+// Get the latest brand logo
 export const getBrandLogo = async (status = 1) => {
   try {
-    const queryText = `
-      SELECT original_name, name
-      FROM tbl_brand_logo
-      WHERE status = $1
-      LIMIT 1`;
-
-    const { rows, rowCount } = await pool.query(queryText, [status]);
+    const { rows, rowCount } = await pool.query(SQL_SELECT_BRAND_LOGO, [
+      status,
+    ]);
     return { rows, rowCount };
   } catch (err) {
-    throw { status: STATUS.FAILURE, err };
+    throw err;
   }
 };
 
+// Get banners with a specific status
 export const getBanner = async (status = 1) => {
   try {
-    const queryText = `
-      SELECT original_name, name
-      FROM tbl_banner
-      WHERE status = $1`;
-
-    const { rows, rowCount } = await pool.query(queryText, [status]);
-
+    const { rows, rowCount } = await pool.query(SQL_SELECT_BANNER, [status]);
     return { rows, rowCount };
   } catch (err) {
-    throw { status: STATUS.FAILURE, err };
+    throw err;
   }
 };

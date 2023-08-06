@@ -1,17 +1,16 @@
-// brand.controller.js
 import {
   addBanner,
   addBrandLogo,
   getBanner,
   getBrandLogo,
 } from '../models/brand.model.js';
-import { logError } from '../shared/helper/common.js';
+import errorHandlerMiddleware from '../shared/helper/common.js';
 import { MESSAGE, STATUS } from '../shared/messages/constant.js';
 
 export default {
-  addBrandLogo: async (req, res) => {
+  addBrandLogo: async (req, res, next) => {
     try {
-      const { originalFilename, newFileName } = req.files[0]; // Since only one logo can be uploaded at once
+      const { originalFilename, newFileName } = req.files[0];
       await addBrandLogo({ originalFilename, newFileName });
 
       // Respond with 201 Created for successful brand logo addition
@@ -20,40 +19,27 @@ export default {
         message: MESSAGE.ADDED_SUCCESS,
       });
     } catch (err) {
-      // Respond with 400 Bad Request for any errors during brand logo addition
-      logError(err);
-      res.status(STATUS.BAD_REQUEST).send({
-        status: STATUS.FAILURE,
-        message: MESSAGE.ADDED_FAILURE,
-      });
+      errorHandlerMiddleware(err, req, res, next);
     }
   },
 
-  addBanner: async (req, res) => {
+  addBanner: async (req, res, next) => {
     try {
-      // Use destructuring to get the relevant properties from each file object
       await Promise.all(
         req.files.map(async ({ originalFilename, newFileName }) => {
           return addBanner({ originalFilename, newFileName });
         })
       );
-
-      // Respond with 201 Created for successful banner additions
       res.status(STATUS.CREATED).send({
         status: STATUS.SUCCESS,
         message: MESSAGE.ADDED_SUCCESS,
       });
     } catch (err) {
-      // Respond with 400 Bad Request for any errors during banner additions
-      logError(err);
-      res.status(STATUS.BAD_REQUEST).send({
-        status: STATUS.FAILURE,
-        message: MESSAGE.ADDED_FAILURE,
-      });
+      errorHandlerMiddleware(err, req, res, next);
     }
   },
 
-  getBrandLogo: async (req, res) => {
+  getBrandLogo: async (req, res, next) => {
     try {
       const { rows, rowCount } = await getBrandLogo();
       res.status(STATUS.OK).send({
@@ -63,16 +49,11 @@ export default {
         count: rowCount,
       });
     } catch (err) {
-      // Respond with 500 Internal Server Error for any unexpected errors
-      logError(err);
-      res.status(STATUS.INTERNAL_SERVER_ERROR).send({
-        status: STATUS.FAILURE,
-        message: MESSAGE.FETCH_FAILURE,
-      });
+      errorHandlerMiddleware(err, req, res, next);
     }
   },
 
-  getBanner: async (req, res) => {
+  getBanner: async (req, res, next) => {
     try {
       const { rows, rowCount } = await getBanner();
       res.status(STATUS.OK).send({
@@ -82,12 +63,7 @@ export default {
         count: rowCount,
       });
     } catch (err) {
-      // Respond with 500 Internal Server Error for any unexpected errors
-      logError(err);
-      res.status(STATUS.INTERNAL_SERVER_ERROR).send({
-        status: STATUS.FAILURE,
-        message: MESSAGE.FETCH_FAILURE,
-      });
+      errorHandlerMiddleware(err, req, res, next);
     }
   },
 };

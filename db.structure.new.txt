@@ -1,0 +1,117 @@
+1. Sellers:
+SellerID (Primary Key)
+SellerName (VARCHAR)
+SellerEmail (VARCHAR)
+SellerPhone (VARCHAR)
+
+2. Categories:
+CategoryID (Primary Key)
+CategoryName (VARCHAR)
+
+3. Products:
+ProductID (Primary Key)
+CategoryID (Foreign Key referencing Categories table)
+Name (VARCHAR)
+Description (TEXT)
+BasePrice (DECIMAL)
+
+4. Stock:
+StockID (Primary Key)
+ProductID (Foreign Key referencing Products table)
+SellerID (Foreign Key referencing Sellers table)
+AvailableQuantity (INT)
+
+5. Discounts:
+DiscountID (Primary Key)
+ProductID (Foreign Key referencing Products table)
+SellerID (Foreign Key referencing Sellers table)
+DiscountPercentage (DECIMAL)
+StartDate (DATE)
+EndDate (DATE)
+
+6. Images:
+ImageID (Primary Key)
+ProductID (Foreign Key referencing Products table)
+ImageURL (VARCHAR)
+
+7. Customers:
+CustomerID (Primary Key)
+FirstName (VARCHAR)
+LastName (VARCHAR)
+Email (VARCHAR)
+Phone (VARCHAR)
+
+8. Addresses:
+AddressID (Primary Key)
+CustomerID (Foreign Key referencing Customers table)
+AddressType (VARCHAR, e.g., Home, Work)
+AreaId  (Foreign Key referencing Areas table)
+//* City (VARCHAR)
+StreetAddress (VARCHAR)
+State (VARCHAR)
+PostalCode (VARCHAR)
+Country (VARCHAR) *//
+
+9. Areas:
+AreaID (Primary Key)
+AreaName (VARCHAR)
+City (VARCHAR)
+State (VARCHAR)
+PostalCode (VARCHAR)
+Country (VARCHAR)
+
+10. Area_Product_Availability:
+AvailabilityID (Primary Key)
+ProductID (Foreign Key referencing Products table)
+AreaID (Foreign Key referencing Areas table)
+SellerID (Foreign Key referencing Sellers table)
+AvailableQuantity (INT)
+
+11. Orders:
+OrderID (Primary Key)
+CustomerID (Foreign Key referencing Customers table)
+OrderDate (DATETIME)
+TotalAmount (DECIMAL)
+
+12. Order_Items:
+OrderItemID (Primary Key)
+OrderID (Foreign Key referencing Orders table)
+ProductID (Foreign Key referencing Products table)
+SellerID (Foreign Key referencing Sellers table)
+Quantity (INT)
+Subtotal (DECIMAL)
+AppliedDiscount (Foreign Key referencing Discounts table, nullable)
+
+13. Ratings:
+RatingID (Primary Key)
+ProductID (Foreign Key referencing Products table)
+CustomerID (Foreign Key referencing Customers table)
+SellerID (Foreign Key referencing Sellers table)
+RatingValue (INT)
+ReviewText (TEXT)
+
+14. Cart:
+CartID (Primary Key)
+CustomerID (Foreign Key referencing Customers table)
+
+15. Cart_Items:
+CartItemID (Primary Key)
+CartID (Foreign Key referencing Cart table)
+ProductID (Foreign Key referencing Products table)
+SellerID (Foreign Key referencing Sellers table)
+Quantity (INT)
+
+16. Wishlist:
+WishlistID (Primary Key)
+CustomerID (Foreign Key referencing Customers table)
+
+17. Wishlist_Items:
+WishlistItemID (Primary Key)
+WishlistID (Foreign Key referencing Wishlist table)
+ProductID (Foreign Key referencing Products table)
+SellerID (Foreign Key referencing Sellers table)
+
+18. Reasons_To_Buy:
+ReasonID (Primary Key)
+ProductID (Foreign Key referencing Products table)
+ReasonText (TEXT)
