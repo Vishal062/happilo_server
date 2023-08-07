@@ -32,6 +32,20 @@ CREATE TABLE "public"."tbl_area" (
 COMMENT ON COLUMN "public"."tbl_area"."name" IS 'Area Name / Street Name';
 
 
+DROP TABLE IF EXISTS "tbl_area_product_availability";
+DROP SEQUENCE IF EXISTS tbl_area_product_availability_id_seq;
+CREATE SEQUENCE tbl_area_product_availability_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1;
+
+CREATE TABLE "public"."tbl_area_product_availability" (
+    "id" integer DEFAULT nextval('tbl_area_product_availability_id_seq') NOT NULL,
+    "product_id" integer NOT NULL,
+    "area_id" integer NOT NULL,
+    "seller_id" integer NOT NULL,
+    "available_quantity" integer NOT NULL,
+    CONSTRAINT "tbl_area_product_availability_pkey" PRIMARY KEY ("id")
+) WITH (oids = false);
+
+
 DROP TABLE IF EXISTS "tbl_banner";
 DROP SEQUENCE IF EXISTS tbl_banner_id_seq1;
 CREATE SEQUENCE tbl_banner_id_seq1 INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1;
@@ -71,6 +85,31 @@ INSERT INTO "tbl_brand_logo" ("id", "image_id", "status", "date_added") VALUES
 (3,	19,	0,	'2023-08-06T16:37:49.674+05:30'),
 (4,	20,	0,	'2023-08-06T16:41:42.820+05:30'),
 (5,	35,	1,	'2023-08-06T16:46:13.533+05:30');
+
+DROP TABLE IF EXISTS "tbl_cart";
+DROP SEQUENCE IF EXISTS tbl_cart_id_seq;
+CREATE SEQUENCE tbl_cart_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1;
+
+CREATE TABLE "public"."tbl_cart" (
+    "id" integer DEFAULT nextval('tbl_cart_id_seq') NOT NULL,
+    "customer_id" integer NOT NULL,
+    CONSTRAINT "tbl_cart_pkey" PRIMARY KEY ("id")
+) WITH (oids = false);
+
+
+DROP TABLE IF EXISTS "tbl_cart_item";
+DROP SEQUENCE IF EXISTS tbl_cart_item_id_seq;
+CREATE SEQUENCE tbl_cart_item_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1;
+
+CREATE TABLE "public"."tbl_cart_item" (
+    "id" integer DEFAULT nextval('tbl_cart_item_id_seq') NOT NULL,
+    "cart_id" integer NOT NULL,
+    "product_id" integer NOT NULL,
+    "seller_id" integer NOT NULL,
+    "quantity" integer NOT NULL,
+    CONSTRAINT "tbl_cart_item_pkey" PRIMARY KEY ("id")
+) WITH (oids = false);
+
 
 DROP TABLE IF EXISTS "tbl_categories";
 DROP SEQUENCE IF EXISTS tbl_categories_id_seq;
@@ -150,6 +189,60 @@ INSERT INTO "tbl_image" ("id", "name", "original_name", "date_added") VALUES
 (34,	'1691320518291-1d20464e15d6e21ef2034d57df97e494dbeb6544.webp',	'Main_IPL_Banner_Desktop_IPL_Main_Banner_DESKTOP_1_1728x.webp',	'2023-08-06 16:45:18.507'),
 (35,	'1691320573466-fbc00d1d047d8241a4de4f856b41b76485635f18.png',	'logohappilo.png',	'2023-08-06 16:46:13.53');
 
+DROP TABLE IF EXISTS "tbl_order";
+DROP SEQUENCE IF EXISTS tbl_order_id_seq;
+CREATE SEQUENCE tbl_order_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1;
+
+CREATE TABLE "public"."tbl_order" (
+    "id" integer DEFAULT nextval('tbl_order_id_seq') NOT NULL,
+    "customer_id" integer NOT NULL,
+    "order_date" timestamp NOT NULL,
+    "total_amount" integer NOT NULL,
+    CONSTRAINT "tbl_order_pkey" PRIMARY KEY ("id")
+) WITH (oids = false);
+
+
+DROP TABLE IF EXISTS "tbl_order_item";
+DROP SEQUENCE IF EXISTS tbl_order_item_id_seq;
+CREATE SEQUENCE tbl_order_item_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1;
+
+CREATE TABLE "public"."tbl_order_item" (
+    "id" integer DEFAULT nextval('tbl_order_item_id_seq') NOT NULL,
+    "order_id" integer NOT NULL,
+    "product_id" integer NOT NULL,
+    "seller_id" integer NOT NULL,
+    "quantity" integer NOT NULL,
+    "sub_total" integer NOT NULL,
+    "applied_discount" integer,
+    CONSTRAINT "tbl_order_item_pkey" PRIMARY KEY ("id")
+) WITH (oids = false);
+
+
+DROP TABLE IF EXISTS "tbl_payment";
+DROP SEQUENCE IF EXISTS tbl_payment_id_seq;
+CREATE SEQUENCE tbl_payment_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1;
+
+CREATE TABLE "public"."tbl_payment" (
+    "id" integer DEFAULT nextval('tbl_payment_id_seq') NOT NULL,
+    "order_id" integer NOT NULL,
+    "payment_amount" integer NOT NULL,
+    "payment_date" timestamp NOT NULL,
+    "payment_status" character varying(255) NOT NULL,
+    "payment_method" character varying NOT NULL,
+    "transaction_id" character varying(255),
+    "payment_details" character varying,
+    CONSTRAINT "tbl_payment_pkey" PRIMARY KEY ("id")
+) WITH (oids = false);
+
+COMMENT ON COLUMN "public"."tbl_payment"."payment_status" IS 'e.g., Pending, Completed';
+
+COMMENT ON COLUMN "public"."tbl_payment"."payment_method" IS 'e.g., Credit Card, Debit Card, UPI,Cash On Delivery';
+
+COMMENT ON COLUMN "public"."tbl_payment"."transaction_id" IS 'provided by the payment gateway';
+
+COMMENT ON COLUMN "public"."tbl_payment"."payment_details" IS 'additional payment-related information';
+
+
 DROP TABLE IF EXISTS "tbl_product";
 DROP SEQUENCE IF EXISTS tbl_product_id_seq1;
 CREATE SEQUENCE tbl_product_id_seq1 INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1;
@@ -173,6 +266,33 @@ CREATE TABLE "public"."tbl_product_images" (
     "product_id" integer NOT NULL,
     "image_id" integer NOT NULL,
     CONSTRAINT "tbl_product_images_pkey" PRIMARY KEY ("id")
+) WITH (oids = false);
+
+
+DROP TABLE IF EXISTS "tbl_rating";
+DROP SEQUENCE IF EXISTS tbl_rating_id_seq;
+CREATE SEQUENCE tbl_rating_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1;
+
+CREATE TABLE "public"."tbl_rating" (
+    "id" integer DEFAULT nextval('tbl_rating_id_seq') NOT NULL,
+    "product_id" integer NOT NULL,
+    "customer_id" integer NOT NULL,
+    "seller_id" integer NOT NULL,
+    "rating_value" integer NOT NULL,
+    "review_text" integer,
+    CONSTRAINT "tbl_rating_pkey" PRIMARY KEY ("id")
+) WITH (oids = false);
+
+
+DROP TABLE IF EXISTS "tbl_reason_to_buy";
+DROP SEQUENCE IF EXISTS tbl_reason_to_buy_id_seq;
+CREATE SEQUENCE tbl_reason_to_buy_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1;
+
+CREATE TABLE "public"."tbl_reason_to_buy" (
+    "id" integer DEFAULT nextval('tbl_reason_to_buy_id_seq') NOT NULL,
+    "order_id" integer NOT NULL,
+    "reason_text" integer NOT NULL,
+    CONSTRAINT "tbl_reason_to_buy_pkey" PRIMARY KEY ("id")
 ) WITH (oids = false);
 
 
@@ -202,13 +322,68 @@ CREATE TABLE "public"."tbl_stock" (
 ) WITH (oids = false);
 
 
+DROP TABLE IF EXISTS "tbl_wishlist";
+DROP SEQUENCE IF EXISTS tbl_wishlist_id_seq;
+CREATE SEQUENCE tbl_wishlist_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1;
+
+CREATE TABLE "public"."tbl_wishlist" (
+    "id" integer DEFAULT nextval('tbl_wishlist_id_seq') NOT NULL,
+    "customer_id" integer NOT NULL,
+    CONSTRAINT "tbl_wishlist_pkey" PRIMARY KEY ("id")
+) WITH (oids = false);
+
+
+DROP TABLE IF EXISTS "tbl_wishlist_item";
+DROP SEQUENCE IF EXISTS wishlist_item_id_seq;
+CREATE SEQUENCE wishlist_item_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1;
+
+CREATE TABLE "public"."tbl_wishlist_item" (
+    "id" integer DEFAULT nextval('wishlist_item_id_seq') NOT NULL,
+    "wishlist_id" integer NOT NULL,
+    "product_id" integer NOT NULL,
+    "seller_id" integer NOT NULL,
+    CONSTRAINT "wishlist_item_pkey" PRIMARY KEY ("id")
+) WITH (oids = false);
+
+
 ALTER TABLE ONLY "public"."tbl_address" ADD CONSTRAINT "tbl_address_area_id_fkey" FOREIGN KEY (area_id) REFERENCES tbl_area(id) ON DELETE RESTRICT NOT DEFERRABLE;
 ALTER TABLE ONLY "public"."tbl_address" ADD CONSTRAINT "tbl_address_customer_id_fkey" FOREIGN KEY (customer_id) REFERENCES tbl_customer(id) ON DELETE RESTRICT NOT DEFERRABLE;
+
+ALTER TABLE ONLY "public"."tbl_area_product_availability" ADD CONSTRAINT "tbl_area_product_availability_area_id_fkey" FOREIGN KEY (area_id) REFERENCES tbl_area(id) NOT DEFERRABLE;
+ALTER TABLE ONLY "public"."tbl_area_product_availability" ADD CONSTRAINT "tbl_area_product_availability_product_id_fkey" FOREIGN KEY (product_id) REFERENCES tbl_product(id) ON DELETE RESTRICT NOT DEFERRABLE;
+ALTER TABLE ONLY "public"."tbl_area_product_availability" ADD CONSTRAINT "tbl_area_product_availability_seller_id_fkey" FOREIGN KEY (seller_id) REFERENCES tbl_sellers(id) NOT DEFERRABLE;
+
+ALTER TABLE ONLY "public"."tbl_cart" ADD CONSTRAINT "tbl_cart_customer_id_fkey" FOREIGN KEY (customer_id) REFERENCES tbl_customer(id) NOT DEFERRABLE;
+
+ALTER TABLE ONLY "public"."tbl_cart_item" ADD CONSTRAINT "tbl_cart_item_cart_id_fkey" FOREIGN KEY (cart_id) REFERENCES tbl_cart(id) NOT DEFERRABLE;
+ALTER TABLE ONLY "public"."tbl_cart_item" ADD CONSTRAINT "tbl_cart_item_product_id_fkey" FOREIGN KEY (product_id) REFERENCES tbl_product(id) NOT DEFERRABLE;
+ALTER TABLE ONLY "public"."tbl_cart_item" ADD CONSTRAINT "tbl_cart_item_seller_id_fkey" FOREIGN KEY (seller_id) REFERENCES tbl_sellers(id) NOT DEFERRABLE;
 
 ALTER TABLE ONLY "public"."tbl_customer" ADD CONSTRAINT "tbl_customer_image_id_fkey" FOREIGN KEY (image_id) REFERENCES tbl_image(id) ON DELETE RESTRICT NOT DEFERRABLE;
 
 ALTER TABLE ONLY "public"."tbl_discounts" ADD CONSTRAINT "tbl_discounts_seller_id_fkey" FOREIGN KEY (seller_id) REFERENCES tbl_sellers(id) ON DELETE RESTRICT NOT DEFERRABLE;
 
+ALTER TABLE ONLY "public"."tbl_order" ADD CONSTRAINT "tbl_order_customer_id_fkey" FOREIGN KEY (customer_id) REFERENCES tbl_customer(id) NOT DEFERRABLE;
+
+ALTER TABLE ONLY "public"."tbl_order_item" ADD CONSTRAINT "tbl_order_item_applied_discount_fkey" FOREIGN KEY (applied_discount) REFERENCES tbl_discounts(id) ON DELETE RESTRICT NOT DEFERRABLE;
+ALTER TABLE ONLY "public"."tbl_order_item" ADD CONSTRAINT "tbl_order_item_order_id_fkey" FOREIGN KEY (order_id) REFERENCES tbl_order(id) ON DELETE RESTRICT NOT DEFERRABLE;
+ALTER TABLE ONLY "public"."tbl_order_item" ADD CONSTRAINT "tbl_order_item_product_id_fkey" FOREIGN KEY (product_id) REFERENCES tbl_product(id) ON DELETE RESTRICT NOT DEFERRABLE;
+ALTER TABLE ONLY "public"."tbl_order_item" ADD CONSTRAINT "tbl_order_item_seller_id_fkey" FOREIGN KEY (seller_id) REFERENCES tbl_sellers(id) NOT DEFERRABLE;
+
+ALTER TABLE ONLY "public"."tbl_payment" ADD CONSTRAINT "tbl_payment_order_id_fkey" FOREIGN KEY (order_id) REFERENCES tbl_order(id) NOT DEFERRABLE;
+
+ALTER TABLE ONLY "public"."tbl_rating" ADD CONSTRAINT "tbl_rating_customer_id_fkey" FOREIGN KEY (customer_id) REFERENCES tbl_customer(id) NOT DEFERRABLE;
+ALTER TABLE ONLY "public"."tbl_rating" ADD CONSTRAINT "tbl_rating_product_id_fkey" FOREIGN KEY (product_id) REFERENCES tbl_product(id) ON DELETE RESTRICT NOT DEFERRABLE;
+ALTER TABLE ONLY "public"."tbl_rating" ADD CONSTRAINT "tbl_rating_seller_id_fkey" FOREIGN KEY (seller_id) REFERENCES tbl_sellers(id) NOT DEFERRABLE;
+
+ALTER TABLE ONLY "public"."tbl_reason_to_buy" ADD CONSTRAINT "tbl_reason_to_buy_order_id_fkey" FOREIGN KEY (order_id) REFERENCES tbl_order(id) NOT DEFERRABLE;
+
 ALTER TABLE ONLY "public"."tbl_stock" ADD CONSTRAINT "tbl_stock_seller_id_fkey" FOREIGN KEY (seller_id) REFERENCES tbl_sellers(id) ON DELETE RESTRICT NOT DEFERRABLE;
 
--- 2023-08-06 17:45:21.422888+05:30
+ALTER TABLE ONLY "public"."tbl_wishlist" ADD CONSTRAINT "tbl_wishlist_customer_id_fkey" FOREIGN KEY (customer_id) REFERENCES tbl_customer(id) NOT DEFERRABLE;
+
+ALTER TABLE ONLY "public"."tbl_wishlist_item" ADD CONSTRAINT "wishlist_item_product_id_fkey" FOREIGN KEY (product_id) REFERENCES tbl_product(id) NOT DEFERRABLE;
+ALTER TABLE ONLY "public"."tbl_wishlist_item" ADD CONSTRAINT "wishlist_item_seller_id_fkey" FOREIGN KEY (seller_id) REFERENCES tbl_sellers(id) NOT DEFERRABLE;
+ALTER TABLE ONLY "public"."tbl_wishlist_item" ADD CONSTRAINT "wishlist_item_wishlist_id_fkey" FOREIGN KEY (wishlist_id) REFERENCES tbl_wishlist(id) NOT DEFERRABLE;
+
+-- 2023-08-07 14:55:56.404084+05:30

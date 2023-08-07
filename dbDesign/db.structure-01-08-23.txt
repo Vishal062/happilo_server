@@ -113,5 +113,16 @@ SellerID (Foreign Key referencing Sellers table)
 
 18. Reasons_To_Buy:
 ReasonID (Primary Key)
-ProductID (Foreign Key referencing Products table)
+OrderID (Foreign Key referencing Order table)
 ReasonText (TEXT)
+
+19. Payments:
+PaymentID (Primary Key)
+OrderID (Foreign Key referencing Orders table)
+CustomerID (Foreign Key referencing Customers table) // Not added in DB because we can get CusstomerId in Order table
+PaymentAmount (DECIMAL)
+PaymentDate (DATETIME)
+PaymentStatus (VARCHAR, e.g., Pending, Completed)
+PaymentMethod (VARCHAR, e.g., Credit Card, PayPal)
+TransactionID (VARCHAR, provided by the payment gateway)
+PaymentDetails (TEXT, additional payment-related information)

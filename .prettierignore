@@ -1,0 +1,12 @@
+# Ignore artifacts:
+/node_modules
+
+# ENV files
+/.env
+
+/debug.log
+
+/.gitignore
+
+/package-lock.json
+/public/uploads
