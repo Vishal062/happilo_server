@@ -41,8 +41,8 @@ export const validateParam = (schema) => {
 export const schemas = {
   signup: Joi.object().keys({
     firstName: VALIDATE.firstName,
-    middleName: VALIDATE.middleName,
     lastName: VALIDATE.lastName,
+    phoneNo: VALIDATE.phoneNo,
     email: VALIDATE.email,
     password: VALIDATE.password,
     confirmPassword: VALIDATE.confirmPassword,
@@ -76,7 +76,7 @@ export const schemas = {
   }),
   login_validation: Joi.object().keys({
     email: Joi.string().required().email().max(80),
-    password: Joi.string().min(4).required(),
+    password: Joi.string().min(8).required(),
   }),
   email_validation: Joi.object().keys({
     email: Joi.string().required().email().max(80),
