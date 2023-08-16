@@ -5,35 +5,37 @@ import {
   listAllProducts,
   updateProductById,
 } from '../models/product.model.js';
+import errorHandlerMiddleware from '../shared/helper/common.js';
 import { isEmptyArray } from '../shared/index.js';
+import { MESSAGE, STATUS } from '../shared/messages/constant.js';
 export default {
   createProduct: async (req, res) => {
-    console.log({ file: req.files });
+    const {name,category,varients,productInfo,discounts}= req.body
+    const {files} = req
     try {
-      await createProduct(req.body);
+      await createProduct({name,category,quantityPricePack:varients,productDescription:productInfo,discounts,files});
       res
         .status(200)
         .send({ status: 1, message: 'Product Created Successfully' });
     } catch (err) {
+      console.log(err)
       res
         .status(400)
         .send({ status: 0, message: 'Unable To Create Product', err });
     }
   },
 
-  listAllProducts: async (req, res) => {
+  listAllProducts:async (req, res,next) => {
     try {
-      const { data } = await listAllProducts();
-      const count = data.rowCount;
-      const products = data.rows;
-      res.status(200).send({ status: 1, products, count });
-      res
-        .status(200)
-        .send({ status: 1, message: 'Product Created Successfully' });
+      const products = await listAllProducts();
+      res.status(STATUS.OK).send({
+        status: STATUS.SUCCESS,
+        message: MESSAGE.FETCH_SUCCESS,
+        data: products,
+        count: products.length,
+      });
     } catch (err) {
-      res
-        .status(400)
-        .send({ status: 0, message: 'Unable To Get Products', err });
+      errorHandlerMiddleware(err, req, res, next);
     }
   },
 

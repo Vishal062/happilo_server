@@ -1,0 +1,439 @@
+ [
+  {
+    "name": "Happilo 100% Natural Premium California Almonds",
+    "category":"Nuts",
+    "varients": [
+      {
+        "quantity": "200g",
+        "price": 275,
+        "pack": 1
+      },
+      {
+        "quantity": "400g",
+        "price": 500,
+        "pack": 2
+      },
+      {
+        "quantity": "1kg",
+        "price": 1200,
+        "pack": 5
+      }
+    ],
+
+    "files": "10 files",
+    "productInfo": [
+      {
+        "name": "Nutritional Boost",
+        "type": "Description",
+        "details": "Enjoy the health benefits of our premium almonds."
+      },
+      {
+        "name": "Tasty and Crunchy",
+        "type": "Description",
+        "details": "Savor the rich flavor and satisfying crunch of our almonds."
+      },
+      {
+        "name": "",
+        "type": "Ingredients",
+        "details": "100% natural California almonds."
+      },
+      {
+        "name": "",
+        "type": "Additional Information",
+        "details": "Store in a cool, dry place."
+      }
+    ],
+    "discount": [{
+      "percentage": 10,
+      "startDate": "2023-08-01",
+      "endDate": "2023-08-01"
+    }]
+  },
+  {
+    "name": "Happilo Premium Cashews",
+    "quantityPrice": [
+      {
+        "quantity": "200g",
+        "price": "350",
+        "pack": 1
+      },
+      {
+        "quantity": "400g",
+        "price": "650",
+        "pack": 2
+      },
+      {
+        "quantity": "1kg",
+        "price": "1500",
+        "pack": 5
+      }
+    ],
+    "files": "10 files",
+    "productInfo": [
+      {
+        "name": "Creamy Delight",
+        "type": "Description",
+        "details": "Indulge in the rich creaminess of our premium cashews."
+      },
+      {
+        "name": "Versatile Snack",
+        "type": "Description",
+        "details": "Perfect for snacking or adding to your favorite recipes."
+      },
+      {
+        "name": "",
+        "type": "Ingredients",
+        "details": "100% natural cashews."
+      },
+      {
+        "name": "",
+        "type": "Additional Information",
+        "details": "Packed with essential nutrients."
+      }
+    ]
+  },
+  {
+    "name": "Happilo Healthy & Tasty Premium Nuts and Berries Mix",
+    "quantityPrice": [
+      {
+        "quantity": "250g",
+        "price": "400",
+        "pack": 1
+      },
+      {
+        "quantity": "500g",
+        "price": "750",
+        "pack": 2
+      },
+      {
+        "quantity": "1kg",
+        "price": "1400",
+        "pack": 5
+      }
+    ],
+    "files": "5 files",
+    "productInfo": [
+      {
+        "name": "Nut Lover’s Dream",
+        "type": "Description",
+        "details": "Experience a variety of nuts in one delightful mix."
+      },
+      {
+        "name": "Perfect for Sharing",
+        "type": "Description",
+        "details": "Ideal for parties, gatherings, or enjoying with loved ones."
+      },
+      {
+        "name": "",
+        "type": "Ingredients",
+        "details": "Assorted nuts including almonds, cashews, and walnuts."
+      },
+      {
+        "name": "",
+        "type": "Additional Information",
+        "details": "Packed in a resealable bag for freshness."
+      }
+    ]
+  },
+  {
+    "name": "Happilo Premium Dried Turkish Apricots",
+    "quantityPrice": [
+      {
+        "quantity": "250g",
+        "price": "300",
+        "pack": 1
+      },
+      {
+        "quantity": "500g",
+        "price": "550",
+        "pack": 2
+      },
+      {
+        "quantity": "1kg",
+        "price": "1000",
+        "pack": 5
+      }
+    ],
+    "files": "7 files",
+    "productInfo": [
+      {
+        "name": "Sweet and Tangy",
+        "type": "Description",
+        "details": "Enjoy the natural sweetness and tanginess of dried apricots."
+      },
+      {
+        "name": "Rich in Fiber",
+        "type": "Description",
+        "details": "A great source of dietary fiber for a healthy diet."
+      },
+      {
+        "name": "",
+        "type": "Ingredients",
+        "details": "100% natural dried apricots."
+      },
+      {
+        "name": "",
+        "type": "Additional Information",
+        "details": "No added sugars or preservatives."
+      }
+    ]
+  },
+  {
+    "name": "Happilo Premium Seedless Afghani Black Raisins",
+    "quantityPrice": [
+      {
+        "quantity": "200g",
+        "price": "250",
+        "pack": 1
+      },
+      {
+        "quantity": "400g",
+        "price": "450",
+        "pack": 2
+      },
+      {
+        "quantity": "1kg",
+        "price": "900",
+        "pack": 5
+      }
+    ],
+    "files": "6 files",
+    "productInfo": [
+      {
+        "name": "Nature’s Candy",
+        "type": "Description",
+        "details": "Satisfy your sweet cravings with our organic raisins."
+      },
+      {
+        "name": "Snack Smart",
+        "type": "Description",
+        "details": "A convenient and healthy on-the-go snack."
+      },
+      {
+        "name": "",
+        "type": "Ingredients",
+        "details": "100% organic raisins."
+      },
+      {
+        "name": "",
+        "type": "Additional Information",
+        "details": "Naturally sun-dried for optimal flavor."
+      }
+    ]
+  },
+  {
+    "name": "Happilo Premium Roasted & Salted Iranian Pistachios",
+    "quantityPrice": [
+      {
+        "quantity": "200g",
+        "price": "400",
+        "pack": 1
+      },
+      {
+        "quantity": "400g",
+        "price": "750",
+        "pack": 2
+      },
+      {
+        "quantity": "1kg",
+        "price": "1400",
+        "pack": 5
+      }
+    ],
+    "files": "9 files",
+    "productInfo": [
+      {
+        "name": "Savory Delight",
+        "type": "Description",
+        "details": "Experience the rich, roasted flavor of our pistachios."
+      },
+      {
+        "name": "Crack and Enjoy",
+        "type": "Description",
+        "details": "A fun and satisfying snack that’s perfect for cracking open."
+      },
+      {
+        "name": "",
+        "type": "Ingredients",
+        "details": "Roasted pistachios with a touch of salt."
+      },
+      {
+        "name": "",
+        "type": "Additional Information",
+        "details": "High in protein and healthy fats."
+      }
+    ]
+  },
+  {
+    "name": "Happilo Premium Dried Californian Pitted Prunes",
+    "quantityPrice": [
+      {
+        "quantity": "250g",
+        "price": "300",
+        "pack": 1
+      },
+      {
+        "quantity": "500g",
+        "price": "550",
+        "pack": 2
+      },
+      {
+        "quantity": "1kg",
+        "price": "1000",
+        "pack": 5
+      }
+    ],
+    "files": "7 files",
+    "productInfo": [
+      {
+        "name": "Tart and Sweet",
+        "type": "Description",
+        "details": "Enjoy the unique blend of tartness and sweetness in our cranberries."
+      },
+      {
+        "name": "Versatile Ingredient",
+        "type": "Description",
+        "details": "Add a burst of flavor to your salads, cereals, and baked goods."
+      },
+      {
+        "name": "",
+        "type": "Ingredients",
+        "details": "Dried cranberries with a touch of sugar."
+      },
+      {
+        "name": "",
+        "type": "Additional Information",
+        "details": "Rich in antioxidants and vitamins."
+      }
+    ]
+  },
+  {
+    "name": "Happilo Premium Chilean Raw Inshell Walnuts",
+    "quantityPrice": [
+      {
+        "quantity": "250g",
+        "price": "350",
+        "pack": 1
+      },
+      {
+        "quantity": "500g",
+        "price": "650",
+        "pack": 2
+      },
+      {
+        "quantity": "1kg",
+        "price": "1200",
+        "pack": 5
+      }
+    ],
+    "files": "8 files",
+    "productInfo": [
+      {
+        "name": "Heart-Healthy Goodness",
+        "type": "Description",
+        "details": "Discover the heart-healthy benefits of our premium walnuts."
+      },
+      {
+        "name": "Naturally Nutty",
+        "type": "Description",
+        "details": "Enjoy the rich nutty flavor and crunchy texture."
+      },
+      {
+        "name": "",
+        "type": "Ingredients",
+        "details": "100% natural walnut halves."
+      },
+      {
+        "name": "",
+        "type": "Additional Information",
+        "details": "A good source of omega-3 fatty acids."
+      }
+    ]
+  },
+  {
+    "name": "Happilo Premium International Omani Dates",
+    "quantityPrice": [
+      {
+        "quantity": "250g",
+        "price": "250",
+        "pack": 1
+      },
+      {
+        "quantity": "500g",
+        "price": "450",
+        "pack": 2
+      },
+      {
+        "quantity": "1kg",
+        "price": "900",
+        "pack": 5
+      }
+    ],
+    "files": "6 files",
+    "productInfo": [
+      {
+        "name": "Natural Energy Boost",
+        "type": "Description",
+        "details": "Experience a burst of natural energy with our Medjool dates."
+      },
+      {
+        "name": "Satisfy Your Sweet Tooth",
+        "type": "Description",
+        "details": "A naturally sweet treat that’s perfect for guilt-free indulgence."
+      },
+      {
+        "name": "",
+        "type": "Ingredients",
+        "details": "100% natural Medjool dates."
+      },
+      {
+        "name": "",
+        "type": "Additional Information",
+        "details": "High in fiber and essential nutrients."
+      }
+    ]
+  },
+  {
+    "name": "Happilo Premium International Dried Mango",
+    "quantityPrice": [
+      {
+        "quantity": "200g",
+        "price": "300",
+        "pack": 1
+      },
+      {
+        "quantity": "400g",
+        "price": "550",
+        "pack": 2
+      },
+      {
+        "quantity": "1kg",
+        "price": "1100",
+        "pack": 5
+      }
+    ],
+    "files": "7 files",
+    "productInfo": [
+      {
+        "name": "Tropical Delight",
+        "type": "Description",
+        "details": "Transport yourself to a tropical paradise with our mango slices."
+      },
+      {
+        "name": "Naturally Sweet",
+        "type": "Description",
+        "details": "Experience the natural sweetness of sun-dried mangoes."
+      },
+      {
+        "name": "",
+        "type": "Ingredients",
+        "details": "100% natural dried mango slices."
+      },
+      {
+        "name": "",
+        "type": "Additional Information",
+        "details": "No added sugars or artificial flavors."
+      }
+    ]
+  }
+]

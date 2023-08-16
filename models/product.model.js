@@ -1,46 +1,71 @@
-import query from '../config/database.js';
+import { pool } from '../config/database.js';
+import { TRANSACTION_STATUS } from '../shared/messages/constant.js';
+import { brandSQL, productSQL } from '../sql/index.js';
+import { getProductsQuery1, getProductsQuery2, getProductsQuery3 } from '../sql/product.sql.js';
 
 export const createProduct = async (productDetails) => {
-  return new Promise(async (resolve, reject) => {
+  try {
+    const { name, category, discounts, quantityPricePack, files, productDescription } = productDetails;
+
+    const client = await pool.connect();
+
     try {
-      await query(
-        'INSERT INTO tbl_product ( url, detailUrl, shortTitle, longTitle, mrp, cost, discount, description, discountMessage, tagline) VALUES ($1, $2, $3,$4,$5,$6,$7,$8,$9,$10)',
-        [
-          productDetails.url,
-          productDetails.detailUrl,
-          productDetails.shortTitle,
-          productDetails.longTitle,
-          productDetails.mrp,
-          productDetails.cost,
-          productDetails.discount,
-          productDetails.description,
-          productDetails.discountmessage,
-          productDetails.tagline,
-        ]
-      );
-      resolve({
-        status: 1,
-        data: productDetails,
-      });
-    } catch (err) {
-      console.log({ err });
-      reject({ status: 0, err });
+      await client.query(TRANSACTION_STATUS.COMMIT);
+
+      let categoryId;
+
+      // Insert category into Categories table if it's a new category
+      if (category) {
+        const { rows } = await client.query(productSQL.categoryInsertQuery, [category]);
+        categoryId = rows[0].category_id;
+      }
+
+      // Insert product into Products table
+      const { rows: productRows } = await client.query(productSQL.productInsertQuery, [categoryId, name]);
+      const productId = productRows[0].product_id;
+
+      // Parallelize the insertion of product variants, images, descriptions, and discounts
+      await Promise.all([
+        Promise.all(quantityPricePack.map(variant => client.query(productSQL.variantInsertQuery, [productId, variant.quantity, variant.price, variant.pack]))),
+        Promise.all(files.map(async ({ originalFilename, newFileName }) => {
+          const { rows: imageRows } = await client.query(brandSQL.SQL_INSERT_IMAGE, [originalFilename, newFileName, new Date()]);
+          return client.query(productSQL.productImageInsertQuery, [productId, imageRows[0].id]);
+        })),
+        Promise.all(productDescription.map(description => client.query(productSQL.descriptionInsertQuery, [productId, description.name, description.type, description.details]))),
+        Promise.all(discounts.map(discount => {
+          const { sellerID = 1, percentage, startDate, endDate } = discount;
+          return client.query(productSQL.discountInsertQuery, [productId, sellerID, percentage, startDate, endDate]);
+        }))
+      ]);
+
+      await client.query(TRANSACTION_STATUS.COMMIT);
+    } catch (error) {
+      await client.query(TRANSACTION_STATUS.ROLLBACK);
+      throw error;
+    } finally {
+      client.release();
     }
-  });
+  } catch (error) {
+    throw error;
+  }
 };
 
+
 export const listAllProducts = async () => {
-  return new Promise(async (resolve, reject) => {
-    try {
-      const products = await query(
-        'SELECT * FROM tbl_product ORDER BY id DESC'
-      );
-      resolve({ status: 1, data: products });
-    } catch (err) {
-      reject({ status: 0, err });
-    }
-  });
+  const client = await pool.connect();
+
+  try {
+  
+
+    const { rows } = await client.query(getProductsQuery3);
+    return rows;
+  } catch (error) {
+    throw error;
+  } finally {
+    client.release();
+  }
 };
+
 export const findProductById = async (id) => {
     return new Promise(async (resolve, reject) => {
       try {

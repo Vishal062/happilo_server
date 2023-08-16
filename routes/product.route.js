@@ -1,10 +1,11 @@
 import Router from 'express-promise-router';
+import uploadFiles from '../utils/fileUploader.js';
 import { productController } from '../controllers/index.js';
 const router = Router();
 
-router.post('/', productController.createProduct);
+router.post('/', uploadFiles, productController.createProduct);
 
-router.get('/list', productController.listAllProducts);
+router.get('/', productController.listAllProducts);
 
 router.get('/:id', productController.findProductById);
 

@@ -1,14 +1,6 @@
 import { pool } from '../config/database.js';
 import { TRANSACTION_STATUS, STATUS } from '../shared/messages/constant.js';
-import {
-  SQL_INSERT_IMAGE,
-  SQL_UPDATE_BRAND_LOGO,
-  SQL_INSERT_BRAND_LOGO,
-  SQL_SELECT_BRAND_LOGO,
-  SQL_SELECT_BANNER,
-  SQL_INSERT_BANNER,
-} from '../sql/brand.sql.js';
-
+import { brandSQL } from '../sql/index.js';
 // Add a brand logo along with associated operations
 export const addBrandLogo = async (brandLogoDetails, status = 1) => {
   const client = await pool.connect();
@@ -19,14 +11,14 @@ export const addBrandLogo = async (brandLogoDetails, status = 1) => {
     // Insert the image into tbl_image
     const {
       rows: [imageId],
-    } = await client.query(SQL_INSERT_IMAGE, [
+    } = await client.query(brandSQL.SQL_INSERT_IMAGE, [
       brandLogoDetails.originalFilename,
       brandLogoDetails.newFileName,
       new Date(),
     ]);
 
     // Update existing brand logos to failure status
-    await client.query(SQL_UPDATE_BRAND_LOGO, [
+    await client.query(brandSQL.SQL_UPDATE_BRAND_LOGO, [
       STATUS.FAILURE,
       status,
       imageId.id,
@@ -35,7 +27,7 @@ export const addBrandLogo = async (brandLogoDetails, status = 1) => {
     // Insert new brand logo with image reference
     const {
       rows: [data],
-    } = await client.query(SQL_INSERT_BRAND_LOGO, [
+    } = await client.query(brandSQL.SQL_INSERT_BRAND_LOGO, [
       imageId.id,
       status,
       new Date(),
@@ -62,7 +54,7 @@ export const addBanner = async (bannerDetails, status = 1) => {
     // Insert the image into tbl_image
     const {
       rows: [imageId],
-    } = await client.query(SQL_INSERT_IMAGE, [
+    } = await client.query(brandSQL.SQL_INSERT_IMAGE, [
       bannerDetails.originalFilename,
       bannerDetails.newFileName,
       new Date(),
@@ -71,7 +63,7 @@ export const addBanner = async (bannerDetails, status = 1) => {
     // Insert banner with associated image
     const {
       rows: [data],
-    } = await client.query(SQL_INSERT_BANNER, [imageId.id, status, new Date()]);
+    } = await client.query(brandSQL.SQL_INSERT_BANNER, [imageId.id, status, new Date()]);
 
     await client.query(TRANSACTION_STATUS.COMMIT);
     return data;
@@ -86,7 +78,7 @@ export const addBanner = async (bannerDetails, status = 1) => {
 // Get the latest brand logo
 export const getBrandLogo = async (status = 1) => {
   try {
-    const { rows, rowCount } = await pool.query(SQL_SELECT_BRAND_LOGO, [
+    const { rows, rowCount } = await pool.query(brandSQL.SQL_SELECT_BRAND_LOGO, [
       status,
     ]);
     return { rows, rowCount };
@@ -98,7 +90,7 @@ export const getBrandLogo = async (status = 1) => {
 // Get banners with a specific status
 export const getBanner = async (status = 1) => {
   try {
-    const { rows, rowCount } = await pool.query(SQL_SELECT_BANNER, [status]);
+    const { rows, rowCount } = await pool.query(brandSQL.SQL_SELECT_BANNER, [status]);
     return { rows, rowCount };
   } catch (err) {
     throw err;

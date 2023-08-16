@@ -6,6 +6,28 @@ import pkg from 'uuid';
 import { createHash } from 'crypto';
 const { v4: uuidv4 } = pkg;
 
+function parseCustomFields(parsedFields) {
+  const parsed = {};
+
+  for (const key in parsedFields) {
+    if (parsedFields.hasOwnProperty(key)) {
+      let value = parsedFields[key][0];
+
+      // Remove surrounding double quotes
+      value = value.replace(/^"|"$/g, '');
+
+      // Parse JSON-like strings if necessary
+      if (value.startsWith('[') || value.startsWith('{')) {
+        value = JSON.parse(value);
+      }
+
+      parsed[key] = value;
+    }
+  }
+
+  return parsed;
+}
+
 const fileUploader = (req, res, uploadDir, callback) => {
   const form = formidable();
 
@@ -14,6 +36,7 @@ const fileUploader = (req, res, uploadDir, callback) => {
 
   // Parse the incoming request and handle multiple files
   form.parse(req, async (err, fields, files) => {
+
     if (err) {
       return callback(err, null);
     }
@@ -63,7 +86,7 @@ const fileUploader = (req, res, uploadDir, callback) => {
     // All file uploads have been processed
 
     // Call the callback with the results
-    return callback(null, filePromises);
+    return callback(null, filePromises, fields);
   });
 };
 
@@ -73,16 +96,16 @@ const uploadFiles = (req, res, next) => {
   const currentFilePath = fileURLToPath(currentFileUrl); // Convert the file URL to a local file path
   const uploadDir = path.join(path.dirname(currentFilePath), '../uploads');
 
-  fileUploader(req, res, uploadDir, (err, filePaths) => {
+  fileUploader(req, res, uploadDir, (err, filePaths, fields) => {
     if (err) {
       console.error('Error handling file upload:', err);
       res.writeHead(500, { 'Content-Type': 'text/plain' });
       res.end('An error occurred during file upload');
       return;
     }
-
     // Set the uploaded files in the req object
     req.files = filePaths;
+    req.body = parseCustomFields(fields)
 
     // Call the next middleware (productController.createProduct) in the chain
     next();
