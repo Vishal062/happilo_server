@@ -1,7 +1,8 @@
 import pkg from 'jsonwebtoken';
 const { sign } = pkg;
 import CryptoJS from 'crypto-js';
-import { hashSync, genSaltSync, compareSync } from 'bcrypt';
+import bcrypt from 'bcrypt'
+// import { hashSync, genSaltSync, compareSync,hash } from 'bcrypt';
 import { isEmptyArray } from '../shared/index.js';
 import {
   createUser,
@@ -11,6 +12,7 @@ import {
   listAllUser,
   updateUserById,
 } from '../models/user.model.js';
+import { decryptPasswordToString, getRandomString } from '../shared/helper/helper.js';
 
 function decryptData(encryptedData, key) {
   const bytes = CryptoJS.AES.decrypt(encryptedData, key);
@@ -104,22 +106,29 @@ export default {
   createUser: async (req, res) => {
     try {
       const {
-        confirmPassword,
-        email,
         firstName,
         lastName,
-        middleName,
+        phoneNo,
+        email,
         password,
       } = req.body;
 
+      //Encrypt Password decrypt here
+      const salt = getRandomString();
+      const decryptPassword = decryptPasswordToString(password,salt)
+
+      //Decrypt password hashed her
+      const passwordHash = await bcrypt.hash(decryptPassword, 8);
+      // password = passwordHash;
+
       await createUser({
-        email,
-        password,
         firstName,
         lastName,
-        middleName,
+        phoneNo,
+        email,
+        password:passwordHash,
       });
-
+      
       res.status(201).send({data:{ status: 1, message: 'User Created Successfully' }});
     } catch (err) {
       console.error(err);

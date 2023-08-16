@@ -9,8 +9,12 @@ export const signup = async (req, res, next) => {
   };
 
   let err = {};
-
+  // const emailExists = await managementModel.pharmacy_email_exists_adm(email);
+  //   if (!!email && !isEmptyArray(emailExists)) {
+  //     err.pharmacy_email = 'Email already exists.';
+  //   }
   const emailExists = await findUserByEmail(user.email);
+  console.log({emailExists:emailExists,emailExists1:emailExists.success});
   if (emailExists.success) {
     err.email = 'Email already exists';
   }

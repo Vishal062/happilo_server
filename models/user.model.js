@@ -6,7 +6,7 @@ export const findUserByEmail = async (email) => {
       const user = await query('SELECT * FROM tbl_customer WHERE email = $1', [
         email,
       ]);
-      resolve({ status: 1, data: user });
+      resolve({ status: 1, data: user, success:true });
     } catch (err) {
       reject({ status: 0, err });
     }
@@ -15,10 +15,10 @@ export const findUserByEmail = async (email) => {
 export const createUser = async (userDetails) => {
   return new Promise(async (resolve, reject) => {
     try {
-      const { email, firstName, lastName, middleName, password } = userDetails;
+      const { email, firstName, lastName, phoneNo, password } = userDetails;
       await query(
-        'INSERT INTO tbl_customer (first_name,middle_name,last_name,email) VALUES ($1, $2, $3, $4)',
-        [firstName, middleName, lastName, email]
+        'INSERT INTO tbl_customer (first_name,last_name,phone,email,password) VALUES ($1, $2, $3, $4,$5)',
+        [firstName, lastName, phoneNo, email, password]
       );
       resolve({ status: 1, data: { firstName, lastName } });
     } catch (err) {
