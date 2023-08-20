@@ -1,6 +1,6 @@
 import Router from 'express-promise-router';
-import { userController } from '../controllers/index.js';
 import { validateBody, validateDbBody, schemas } from '../validators/index.js';
+import userController from '../controllers/user.controller.js';
 const router = Router();
 
 router.post(
