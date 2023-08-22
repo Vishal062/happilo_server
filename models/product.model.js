@@ -1,11 +1,11 @@
 import { pool } from '../config/database.js';
 import { TRANSACTION_STATUS } from '../shared/messages/constant.js';
 import { brandSQL, productSQL } from '../sql/index.js';
-import { getProductsQuery1, getProductsQuery2, getProductsQuery3 } from '../sql/product.sql.js';
+import { getProductsQuery3 } from '../sql/product.sql.js';
 
 export const createProduct = async (productDetails) => {
   try {
-    const { name, category, discounts, quantityPricePack, files, productDescription } = productDetails;
+    const { name, category, discounts, varients, imageIds, productInfo } = productDetails;
 
     const client = await pool.connect();
 
@@ -26,12 +26,11 @@ export const createProduct = async (productDetails) => {
 
       // Parallelize the insertion of product variants, images, descriptions, and discounts
       await Promise.all([
-        Promise.all(quantityPricePack.map(variant => client.query(productSQL.variantInsertQuery, [productId, variant.quantity, variant.price, variant.pack]))),
-        Promise.all(files.map(async ({ originalFilename, newFileName }) => {
-          const { rows: imageRows } = await client.query(brandSQL.SQL_INSERT_IMAGE, [originalFilename, newFileName, new Date()]);
-          return client.query(productSQL.productImageInsertQuery, [productId, imageRows[0].id]);
+        Promise.all(varients.map(variant => client.query(productSQL.variantInsertQuery, [productId, variant.quantity, variant.price, variant.pack]))),
+        Promise.all(imageIds.map(async (id) => {
+         return client.query(productSQL.productImageInsertQuery, [productId, id]);
         })),
-        Promise.all(productDescription.map(description => client.query(productSQL.descriptionInsertQuery, [productId, description.name, description.type, description.details]))),
+        Promise.all(productInfo.map(description => client.query(productSQL.descriptionInsertQuery, [productId, description.name, description.type, description.details]))),
         Promise.all(discounts.map(discount => {
           const { sellerID = 1, percentage, startDate, endDate } = discount;
           return client.query(productSQL.discountInsertQuery, [productId, sellerID, percentage, startDate, endDate]);
@@ -39,6 +38,36 @@ export const createProduct = async (productDetails) => {
       ]);
 
       await client.query(TRANSACTION_STATUS.COMMIT);
+      return productId
+    } catch (error) {
+      await client.query(TRANSACTION_STATUS.ROLLBACK);
+      throw error;
+    } finally {
+      client.release();
+    }
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const uploadProductImage = async ({files}) => {
+  try {
+
+    const client = await pool.connect();
+
+    try {
+      await client.query(TRANSACTION_STATUS.BEGIN);
+
+      const imageInsertPromises = files.map(async ({ originalname:originalFilename, filename:newFileName }) => {
+        const { rows: imageRows } = await client.query(brandSQL.SQL_INSERT_IMAGE, [originalFilename, newFileName, new Date()]);
+        return imageRows[0].id;
+      });
+
+      const imageIds = await Promise.all(imageInsertPromises);
+
+      await client.query(TRANSACTION_STATUS.COMMIT);
+
+      return imageIds;
     } catch (error) {
       await client.query(TRANSACTION_STATUS.ROLLBACK);
       throw error;
