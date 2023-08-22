@@ -14,20 +14,11 @@ import {
 } from '../models/user.model.js';
 import { decryptPasswordToString, getRandomString } from '../shared/helper/helper.js';
 
-function decryptData(encryptedData, key) {
-  const bytes = CryptoJS.AES.decrypt(encryptedData, key);
-  const decryptedData = bytes.toString(CryptoJS.enc.Utf8);
-  return decryptedData;
-}
-function encryptData(data, key) {
-  const encryptedData = CryptoJS.AES.encrypt(data, key).toString();
-  return encryptedData;
-}
-
 export default {
   login: async (req, res) => {
     try {
       const { username: email, password } = req.body;
+      console.log({CNT:req.body})
       const { data } = await findUserByEmail(email);
       const results = data.rows;
       if (!results) {
@@ -114,22 +105,19 @@ export default {
       } = req.body;
 
       //Encrypt Password decrypt here
-      const salt = getRandomString();
-      const decryptPassword = decryptPasswordToString(password,salt)
+      const decryptPassword = decryptPasswordToString(password)
 
       //Decrypt password hashed her
-      const passwordHash = await bcrypt.hash(decryptPassword, 8);
-      // password = passwordHash;
+      const passwordHash = await bcrypt.hash(decryptPassword ? decryptPassword : password, 10);
 
       await createUser({
         firstName,
         lastName,
         phoneNo,
         email,
-        password:passwordHash,
+        password: passwordHash,
       });
-      
-      res.status(201).send({data:{ status: 1, message: 'User Created Successfully' }});
+      res.status(201).send({ data: { status: 1, message: 'User Created Successfully' } });
     } catch (err) {
       console.error(err);
       res.status(500).send({

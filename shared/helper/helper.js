@@ -20,3 +20,9 @@ export const getRandomString = (length) => {
 // ? Decrypt the encrypt password.
 const secretKey = config.cryptR.secret;
 export const decryptPasswordToString = (data, key = '') => CryptoJS.AES.decrypt(data, secretKey).toString(CryptoJS.enc.Utf8);
+
+// To check Password Pattern
+export const passwordContainsPattern = (password) => {
+  const pattern = "#==";
+  return password.includes(pattern);
+};

@@ -47,6 +47,10 @@ export const schemas = {
     password: VALIDATE.password,
     confirmPassword: VALIDATE.confirmPassword,
   }),
+  login: Joi.object().keys({
+    email: VALIDATE.email,
+    password: VALIDATE.password
+  }),
   delete_validation: Joi.object().keys({
     id: Joi.number().required(),
   }),

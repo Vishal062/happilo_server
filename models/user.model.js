@@ -3,15 +3,30 @@ import query from '../config/database.js';
 export const findUserByEmail = async (email) => {
   return new Promise(async (resolve, reject) => {
     try {
-      const user = await query('SELECT * FROM tbl_customer WHERE email = $1', [
+      const { rows, rowCount } = await query('SELECT * FROM tbl_customer WHERE email = $1', [
         email,
       ]);
-      resolve({ status: 1, data: user, success:true });
+      resolve({ status: 1, data: rows, success: rowCount > 0 });
     } catch (err) {
       reject({ status: 0, err });
     }
   });
 };
+
+// export const findUserByEmail = async (email) => {
+//   return new Promise(async (resolve, reject) => {
+//     try {
+//       const { rows, rowCount } = await query('SELECT * FROM tbl_customer WHERE email = $1', [email]);
+//       console.log({ rows, rowCount });
+
+//       const success = rowCount > 0; // If rowCount > 0, user exists, otherwise user does not exist
+
+//       resolve({ status: 1, data: rows, success: !success }); // Reversed success value
+//     } catch (err) {
+//       reject({ status: 0, err });
+//     }
+//   });
+// };
 export const createUser = async (userDetails) => {
   return new Promise(async (resolve, reject) => {
     try {
