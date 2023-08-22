@@ -22,9 +22,9 @@ export default {
       const { data } = await findUserByEmail(email);
       const results = data.rows;
       if (!results) {
-        return res.json({
+        return res.status(400).json({
           success: 0,
-          data: 'Invalid email or password',
+          message: 'Invalid email or password',
         });
       }
 
