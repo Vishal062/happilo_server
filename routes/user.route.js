@@ -1,5 +1,5 @@
 import Router from 'express-promise-router';
-import { validateBody, validateDbBody, schemas } from '../validators/index.js';
+import { validateBody, validateDbBody, schemas, validatePassword } from '../validators/index.js';
 import userController from '../controllers/user.controller.js';
 const router = Router();
 
