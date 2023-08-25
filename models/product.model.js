@@ -106,8 +106,8 @@ export const findProductById = async (id) => {
         reject({ status: 0, err });
       }
     });
-  },
-  updateProductById = async (productDetails) => {
+  }
+export const updateProductById = async (productDetails) => {
     return new Promise(async (resolve, reject) => {
       try {
         const { rows, rowCount } = await query(

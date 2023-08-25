@@ -4,11 +4,24 @@ import { isEmptyArray } from '../shared/index.js';
 import { MESSAGE, STATUS } from '../shared/messages/constant.js';
 
 export default {
-  createProduct: async (req, res) => {
-    const {name,category,varients,productInfo,discounts}= req.body
+  uploadProductImage: async (req, res) => {
     const {files} = req
     try {
-      await productModel.createProduct({name,category,quantityPricePack:varients,productDescription:productInfo,discounts,files});
+      const imageIds = await productModel.uploadProductImage({files});
+      res
+        .status(200)
+        .send({ status: 1, imageIds:imageIds, message: 'Image Uploaded Successfully' });
+    } catch (err) {
+      console.log(err)
+      res
+        .status(400)
+        .send({ status: 0, message: 'Unable To Create Product', err });
+    }
+  },
+  createProduct: async (req, res) => {
+    const {name,category,varients,productInfo,discounts,imageIds}= req.body
+    try {
+      await productModel.createProduct({name,category,varients,productInfo,discounts,imageIds});
       res
         .status(200)
         .send({ status: 1, message: 'Product Created Successfully' });

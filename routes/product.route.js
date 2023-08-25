@@ -4,7 +4,9 @@ import productController from '../controllers/product.controller.js';
 
 const router = Router();
 
-router.post('/', uploadFiles, productController.createProduct);
+router.post('/upload-product-image', uploadFiles, productController.uploadProductImage);
+
+router.post('/create-product', productController.createProduct);
 
 router.get('/', productController.listAllProducts);
 

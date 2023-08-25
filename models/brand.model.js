@@ -12,8 +12,8 @@ export const addBrandLogo = async (brandLogoDetails, status = 1) => {
     const {
       rows: [imageId],
     } = await client.query(brandSQL.SQL_INSERT_IMAGE, [
-      brandLogoDetails.originalFilename,
-      brandLogoDetails.newFileName,
+      brandLogoDetails.originalname, 
+      brandLogoDetails.filename,
       new Date(),
     ]);
 
@@ -55,8 +55,8 @@ export const addBanner = async (bannerDetails, status = 1) => {
     const {
       rows: [imageId],
     } = await client.query(brandSQL.SQL_INSERT_IMAGE, [
-      bannerDetails.originalFilename,
-      bannerDetails.newFileName,
+      bannerDetails. originalname,
+      bannerDetails.filename,
       new Date(),
     ]);
 
