@@ -1,7 +1,7 @@
 import { pool } from '../config/database.js';
 import { TRANSACTION_STATUS } from '../shared/messages/constant.js';
 import { brandSQL, productSQL } from '../sql/index.js';
-import { getProductsQuery3 } from '../sql/product.sql.js';
+import { getProductsByProductId, getProductsQuery3 } from '../sql/product.sql.js';
 
 export const createProduct = async (productDetails) => {
   try {
@@ -82,10 +82,7 @@ export const uploadProductImage = async ({files}) => {
 
 export const listAllProducts = async () => {
   const client = await pool.connect();
-
   try {
-  
-
     const { rows } = await client.query(getProductsQuery3);
     return rows;
   } catch (error) {
@@ -95,18 +92,17 @@ export const listAllProducts = async () => {
   }
 };
 
-export const findProductById = async (id) => {
-    return new Promise(async (resolve, reject) => {
-      try {
-        const product = await query('SELECT * FROM tbl_product WHERE id = $1', [
-          id,
-        ]);
-        resolve({ status: 1, data: product });
-      } catch (err) {
-        reject({ status: 0, err });
-      }
-    });
+export const findProductById = async (product_id) => {
+  const client = await pool.connect();
+  try {
+    const { rows } = await client.query(getProductsByProductId,[product_id]);
+    return rows;
+  } catch (error) {
+    throw error;
+  } finally {
+    client.release();
   }
+}
 export const updateProductById = async (productDetails) => {
     return new Promise(async (resolve, reject) => {
       try {

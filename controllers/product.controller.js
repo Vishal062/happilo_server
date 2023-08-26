@@ -48,21 +48,19 @@ export default {
   },
 
   findProductById: async (req, res) => {
-    try {
-      const product_id = parseInt(req.params.id);
-      const { data } = await productModel.findProductById(product_id);
-      const count = data.rowCount;
-      const products = data.rows;
-      res.status(200).send({ status: 1, products, count });
-      res
-        .status(200)
-        .send({ status: 1, message: 'Product Created Successfully' });
-    } catch (err) {
-      res
-        .status(400)
-        .send({ status: 0, message: 'Unable To Get Product', err });
-    }
-  },
+        try {
+          const product_id = parseInt(req.params.id);
+          const products = await productModel.findProductById(product_id);
+          res.status(STATUS.OK).send({
+            status: STATUS.SUCCESS,
+            message: MESSAGE.FETCH_SUCCESS,
+            data: products,
+            count: products.length,
+          });
+        } catch (err) {
+          errorHandlerMiddleware(err, req, res, next);
+        }
+      },
 
   updateProductById: async (req, res) => {
     try {
