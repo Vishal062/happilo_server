@@ -14,7 +14,8 @@ router.post(
 router.post(
   '/login',
   validateBody(schemas.login),
-  validateDbBody.login, 
+  validateDbBody.login,
+  validatePassword.login, 
   userController.login
 );
 

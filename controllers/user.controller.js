@@ -1,58 +1,47 @@
 import pkg from 'jsonwebtoken';
 const { sign } = pkg;
 import CryptoJS from 'crypto-js';
-import bcrypt from 'bcrypt'
+import bcrypt from 'bcrypt';
 // import { hashSync, genSaltSync, compareSync,hash } from 'bcrypt';
 import { isEmptyArray } from '../shared/index.js';
 import {
   createUser,
   deleteUserById,
-  findUserByEmail,
   findUserById,
+  findUserNameByEmail,
   listAllUser,
   updateUserById,
 } from '../models/user.model.js';
 import { decryptPasswordToString, getRandomString } from '../shared/helper/helper.js';
+import { generateTokenOne } from '../shared/helper/generateToken.js';
 
 export default {
   login: async (req, res) => {
+    // console.log({Req:req})
     try {
-      const { username: email, password } = req.body;
-      console.log({CNT:req.body})
-      const { data } = await findUserByEmail(email);
-      const results = data.rows;
-      if (!results) {
+      const { email, password } = req.body;
+
+      const { data } = await findUserNameByEmail(email);
+      console.log({ data: data })
+      const userData = {
+        userId: data.id,
+        username: data.first_name + '_' + data.last_name,
+        useremail: data.email,
+        phone: data.phone,
+      }
+      console.log({ userData: userData });
+
+      if (!data) {
         return res.status(400).json({
           success: 0,
-          message: 'Invalid email or password',
+          message: 'Invalid mail and password Please try again',
         });
       }
 
-      if (results.length > 0) {
-        const result = compareSync(password, results[0].password);
-        if (result) {
-          results.password = undefined;
-          const jsontoken = sign(
-            {
-              name: results[0].first_name + ' ' + results[0].last_name,
-              id: results[0].id,
-            },
-            process.env.SECRET_KEY,
-            {
-              expiresIn: '1h',
-            }
-          );
-          return res.json({
-            success: 1,
-            message: 'login successfully',
-            token: jsontoken,
-          });
-        } else {
-          return res.status(400).json({
-            success: 0,
-            message: 'Invalid credentials',
-          });
-        }
+      if (data) {
+        let token = ''
+        token = generateTokenOne(userData);
+        return res.status(200).json({ token: token, message: 'Loggeed In successfully', status: 1 })
       } else {
         return res.status(400).json({
           success: 0,
@@ -127,8 +116,8 @@ export default {
       });
     }
   },
+
   listAllUser: async (req, res) => {
-    console.log('reaching here');
     try {
       const { data } = await listAllUser();
       const count = data.rowCount;

@@ -1,5 +1,7 @@
 import CryptoJS from 'crypto-js';
+import bcrypt from 'bcrypt';
 import config from '../../config/config.js';
+
 // ? Get a random string and make salt for encryption
 export const getRandomString = (length) => {
   let randomChars =
@@ -25,4 +27,12 @@ export const decryptPasswordToString = (data, key = '') => CryptoJS.AES.decrypt(
 export const passwordContainsPattern = (password) => {
   const pattern = "#==";
   return password.includes(pattern);
+};
+
+export const isValidPassword = async function (newPassword, existingPassword) {
+  try {
+    return await bcrypt.compare(newPassword, existingPassword);
+  } catch (error) {
+    throw new Error(error);
+  }
 };

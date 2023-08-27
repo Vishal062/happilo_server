@@ -13,20 +13,36 @@ export const findUserByEmail = async (email) => {
   });
 };
 
-// export const findUserByEmail = async (email) => {
-//   return new Promise(async (resolve, reject) => {
-//     try {
-//       const { rows, rowCount } = await query('SELECT * FROM tbl_customer WHERE email = $1', [email]);
-//       console.log({ rows, rowCount });
+export const findUserExistPassword = async (email) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const { rows, rowCount } = await query('SELECT * FROM tbl_customer WHERE email = $1', [
+        email,
+      ]);
+      if (rowCount > 0) {
+        const user = rows[0];
+        const hashedPassword = user.password;
+        resolve({ status: 1, data: hashedPassword, success: true });
+      }
+    } catch (err) {
+      reject({ status: 0, err });
+    }
+  });
+};
 
-//       const success = rowCount > 0; // If rowCount > 0, user exists, otherwise user does not exist
+export const findUserNameByEmail = async (email) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const { rows, rowCount } = await query('SELECT * FROM tbl_customer WHERE email = $1', [
+        email,
+      ]);
+      resolve({ status: 1, data: rows[0], success: rowCount > 0 });
+    } catch (err) {
+      reject({ status: 0, err });
+    }
+  });
+};
 
-//       resolve({ status: 1, data: rows, success: !success }); // Reversed success value
-//     } catch (err) {
-//       reject({ status: 0, err });
-//     }
-//   });
-// };
 export const createUser = async (userDetails) => {
   return new Promise(async (resolve, reject) => {
     try {
