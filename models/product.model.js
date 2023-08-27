@@ -1,7 +1,7 @@
 import { pool } from '../config/database.js';
 import { TRANSACTION_STATUS } from '../shared/messages/constant.js';
 import { brandSQL, productSQL } from '../sql/index.js';
-import { getProductsByProductId, getProductsQuery3 } from '../sql/product.sql.js';
+import { SQL_SEARCH_PRODUCT, getProductsByProductId, getProductsQuery3 } from '../sql/product.sql.js';
 
 export const createProduct = async (productDetails) => {
   try {
@@ -96,6 +96,21 @@ export const findProductById = async (product_id) => {
   const client = await pool.connect();
   try {
     const { rows } = await client.query(getProductsByProductId,[product_id]);
+    return rows;
+  } catch (error) {
+    throw error;
+  } finally {
+    client.release();
+  }
+}
+export const searchProduct = async (query) => {
+  const client = await pool.connect();
+  try {
+    let searchSQL = SQL_SEARCH_PRODUCT
+    if(!!query){
+      searchSQL += `WHERE name ILIKE '%${query}%'`
+    }
+    const { rows } = await client.query(searchSQL);
     return rows;
   } catch (error) {
     throw error;

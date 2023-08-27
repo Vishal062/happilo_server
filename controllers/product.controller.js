@@ -47,10 +47,25 @@ export default {
     }
   },
 
-  findProductById: async (req, res) => {
+  findProductById: async (req, res,next) => {
         try {
           const product_id = parseInt(req.params.id);
           const products = await productModel.findProductById(product_id);
+          res.status(STATUS.OK).send({
+            status: STATUS.SUCCESS,
+            message: MESSAGE.FETCH_SUCCESS,
+            data: products,
+            count: products.length,
+          });
+        } catch (err) {
+          errorHandlerMiddleware(err, req, res, next);
+        }
+      },
+      searchProduct: async (req, res,next) => {
+        console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>",req.query)
+        try {
+          const {query} = req.query;
+          const products = await productModel.searchProduct(query);
           res.status(STATUS.OK).send({
             status: STATUS.SUCCESS,
             message: MESSAGE.FETCH_SUCCESS,

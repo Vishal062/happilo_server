@@ -309,15 +309,14 @@ CREATE TABLE "public"."tbl_product" (
 
 INSERT INTO "tbl_product" ("id", "name", "category_id") VALUES
 (1,	'Happilo 100% Natural Premium California Almonds',	1),
-(2,	'Happilo Healthy & Tasty Premium Nuts and Berries Mix',	2),
 (3,	'Happilo Healthy & Tasty Premium Nuts and Berries Mix',	3),
-(4,	'Delicious Crunchy Cashews',	4),
 (5,	'Happilo Premium Dried Californian Pitted Prunes',	5),
 (6,	'Happilo Premium Dried Turkish Apricots',	6),
 (7,	'Happilo Premium International Dried Mango',	7),
 (8,	'Happilo Premium International Omani Dates',	8),
 (9,	'Happilo Premium Roasted & Salted Iranian Pistachios',	9),
-(10,	'Happilo Premium Seedless Afghani Black Raisins',	10);
+(10,	'Happilo Premium Seedless Afghani Black Raisins',	10),
+(4,	'Happilo Fresh & Delicious Crunchy Cashews',	4);
 
 DROP TABLE IF EXISTS "tbl_product_category";
 DROP SEQUENCE IF EXISTS tbl_categories_id_seq;
@@ -365,10 +364,6 @@ INSERT INTO "tbl_product_description" ("id", "product_id", "name", "type", "deta
 (2,	1,	'Tasty and Crunchy',	'Description',	'Savor the rich flavor and satisfying crunch of our almonds.'),
 (3,	1,	'',	'Ingredients',	'100% natural California almonds.'),
 (4,	1,	'',	'Additional Information',	'Store in a cool, dry place.'),
-(5,	2,	'Nut Lover’s Dream',	'Description',	'Experience a variety of nuts in one delightful mix.'),
-(6,	2,	'Perfect for Sharing',	'Description',	'Ideal for parties, gatherings, or enjoying with loved ones.'),
-(7,	2,	'',	'Ingredients',	'Assorted nuts including almonds, cashews, and walnuts.'),
-(8,	2,	'',	'Additional Information',	'Packed in a resealable bag for freshness.'),
 (9,	3,	'Nut Lover’s Dream',	'Description',	'Experience a variety of nuts in one delightful mix.'),
 (10,	3,	'Perfect for Sharing',	'Description',	'Ideal for parties, gatherings, or enjoying with loved ones.'),
 (11,	3,	'',	'Ingredients',	'Assorted nuts including almonds, cashews, and walnuts.'),
@@ -553,9 +548,6 @@ INSERT INTO "tbl_product_variant" ("id", "product_id", "variant_name", "price", 
 (1,	1,	'200g',	275,	1),
 (2,	1,	'400g',	500,	2),
 (3,	1,	'1kg',	1200,	5),
-(4,	2,	'250g',	400,	1),
-(5,	2,	'500g',	750,	2),
-(6,	2,	'1kg',	1400,	5),
 (7,	3,	'250g',	400,	1),
 (8,	3,	'500g',	750,	2),
 (9,	3,	'1kg',	1400,	5),
@@ -712,4 +704,4 @@ ALTER TABLE ONLY "public"."tbl_wishlist_item" ADD CONSTRAINT "wishlist_item_prod
 ALTER TABLE ONLY "public"."tbl_wishlist_item" ADD CONSTRAINT "wishlist_item_seller_id_fkey" FOREIGN KEY (seller_id) REFERENCES tbl_sellers(id) NOT DEFERRABLE;
 ALTER TABLE ONLY "public"."tbl_wishlist_item" ADD CONSTRAINT "wishlist_item_wishlist_id_fkey" FOREIGN KEY (wishlist_id) REFERENCES tbl_wishlist(id) NOT DEFERRABLE;
 
--- 2023-08-25 13:33:57.18688+05:30
+-- 2023-08-27 19:46:19.296105+05:30

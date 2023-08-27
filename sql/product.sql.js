@@ -35,6 +35,8 @@ INSERT INTO tbl_image (original_name, name, date_added)
 VALUES ($1, $2, $3)
 RETURNING id`;
 
+export const SQL_SEARCH_PRODUCT = `SELECT id AS product_id, name AS product_name FROM tbl_product `;
+
 export  const getProductsQuery1 =`
 WITH Variants AS (
   SELECT

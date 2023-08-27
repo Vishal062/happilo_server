@@ -221,3 +221,427 @@
     at processTicksAndRejections (internal/process/task_queues.js:95:5)
     at async Module.addBrandLogo (file:///D:/desktop/happilo/server/models/brand.model.js:14:9)
     at async addBrandLogo (file:///D:/desktop/happilo/server/controllers/brand.controller.js:9:7)
+[2023-08-26T15:54:25.287Z] error: bind message supplies 1 parameters, but prepared statement "" requires 0
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:109:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T15:58:44.336Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:113:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T15:58:47.005Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:113:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T15:58:49.252Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:113:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T15:59:06.692Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:113:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T15:59:40.481Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:113:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T16:01:48.083Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:113:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T16:02:40.353Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:113:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T16:42:36.220Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:113:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T16:43:09.402Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:113:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T16:44:18.513Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:113:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T16:44:58.617Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:113:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T16:45:34.239Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T16:55:42.416Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T16:55:44.877Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T16:56:02.309Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T16:56:07.242Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T16:58:05.169Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T16:58:07.515Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T16:59:28.947Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T16:59:31.195Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:00:02.276Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:00:03.826Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:00:16.094Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:00:17.975Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:00:41.362Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:00:43.867Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:00:55.144Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:01:59.490Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:02:08.432Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:02:33.058Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:02:35.286Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:02:45.901Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:02:47.941Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:08:28.433Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:08:30.228Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:08:31.962Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:08:33.879Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:09:34.182Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:09:36.001Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:09:38.357Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:10:00.112Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:10:01.074Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:10:01.799Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:10:22.360Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:10:23.132Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:10:41.896Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:11:12.036Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:11:13.272Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:11:14.866Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:11:56.622Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:11:57.502Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:12:40.960Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:12:42.608Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:16:21.280Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:16:22.592Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:16:31.411Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:16:32.331Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:16:33.483Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:17:26.736Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:17:31.805Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:18:13.858Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:18:15.199Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:18:17.351Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:18:51.143Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:19:21.285Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:19:23.048Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:22:43.607Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:22:46.129Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:43:57.893Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:44:01.900Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:44:03.666Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:44:06.152Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:46:04.557Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:46:09.939Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:46:28.644Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:48:54.516Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:49:02.237Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:49:05.125Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
+[2023-08-26T17:50:47.180Z] error: syntax error at or near "ILIKE"
+    at D:\desktop\happilo\server\node_modules\pg\lib\client.js:526:17
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async Module.searchProduct (file:///D:/desktop/happilo/server/models/product.model.js:114:22)
+    at async searchProduct (file:///D:/desktop/happilo/server/controllers/product.controller.js:68:28)
