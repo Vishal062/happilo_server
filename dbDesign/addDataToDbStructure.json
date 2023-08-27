@@ -1,438 +1,511 @@
- [
+[
   {
-    "name": "Happilo 100% Natural Premium California Almonds",
-    "category":"Nuts",
+    "name": "Delicious Crunchy Cashews",
+    "category": "Nuts",
     "varients": [
       {
         "quantity": "200g",
-        "price": 275,
+        "price": 220,
         "pack": 1
       },
       {
         "quantity": "400g",
-        "price": 500,
+        "price": 400,
         "pack": 2
       },
       {
         "quantity": "1kg",
-        "price": 1200,
-        "pack": 5
-      }
-    ],
-
-    "files": "10 files",
-    "productInfo": [
-      {
-        "name": "Nutritional Boost",
-        "type": "Description",
-        "details": "Enjoy the health benefits of our premium almonds."
-      },
-      {
-        "name": "Tasty and Crunchy",
-        "type": "Description",
-        "details": "Savor the rich flavor and satisfying crunch of our almonds."
-      },
-      {
-        "name": "",
-        "type": "Ingredients",
-        "details": "100% natural California almonds."
-      },
-      {
-        "name": "",
-        "type": "Additional Information",
-        "details": "Store in a cool, dry place."
-      }
-    ],
-    "discount": [{
-      "percentage": 10,
-      "startDate": "2023-08-01",
-      "endDate": "2023-08-01"
-    }]
-  },
-  {
-    "name": "Happilo Premium Cashews",
-    "quantityPrice": [
-      {
-        "quantity": "200g",
-        "price": "350",
-        "pack": 1
-      },
-      {
-        "quantity": "400g",
-        "price": "650",
-        "pack": 2
-      },
-      {
-        "quantity": "1kg",
-        "price": "1500",
-        "pack": 5
-      }
-    ],
-    "files": "10 files",
-    "productInfo": [
-      {
-        "name": "Creamy Delight",
-        "type": "Description",
-        "details": "Indulge in the rich creaminess of our premium cashews."
-      },
-      {
-        "name": "Versatile Snack",
-        "type": "Description",
-        "details": "Perfect for snacking or adding to your favorite recipes."
-      },
-      {
-        "name": "",
-        "type": "Ingredients",
-        "details": "100% natural cashews."
-      },
-      {
-        "name": "",
-        "type": "Additional Information",
-        "details": "Packed with essential nutrients."
-      }
-    ]
-  },
-  {
-    "name": "Happilo Healthy & Tasty Premium Nuts and Berries Mix",
-    "quantityPrice": [
-      {
-        "quantity": "250g",
-        "price": "400",
-        "pack": 1
-      },
-      {
-        "quantity": "500g",
-        "price": "750",
-        "pack": 2
-      },
-      {
-        "quantity": "1kg",
-        "price": "1400",
-        "pack": 5
-      }
-    ],
-    "files": "5 files",
-    "productInfo": [
-      {
-        "name": "Nut Lover’s Dream",
-        "type": "Description",
-        "details": "Experience a variety of nuts in one delightful mix."
-      },
-      {
-        "name": "Perfect for Sharing",
-        "type": "Description",
-        "details": "Ideal for parties, gatherings, or enjoying with loved ones."
-      },
-      {
-        "name": "",
-        "type": "Ingredients",
-        "details": "Assorted nuts including almonds, cashews, and walnuts."
-      },
-      {
-        "name": "",
-        "type": "Additional Information",
-        "details": "Packed in a resealable bag for freshness."
-      }
-    ]
-  },
-  {
-    "name": "Happilo Premium Dried Turkish Apricots",
-    "quantityPrice": [
-      {
-        "quantity": "250g",
-        "price": "300",
-        "pack": 1
-      },
-      {
-        "quantity": "500g",
-        "price": "550",
-        "pack": 2
-      },
-      {
-        "quantity": "1kg",
-        "price": "1000",
-        "pack": 5
-      }
-    ],
-    "files": "7 files",
-    "productInfo": [
-      {
-        "name": "Sweet and Tangy",
-        "type": "Description",
-        "details": "Enjoy the natural sweetness and tanginess of dried apricots."
-      },
-      {
-        "name": "Rich in Fiber",
-        "type": "Description",
-        "details": "A great source of dietary fiber for a healthy diet."
-      },
-      {
-        "name": "",
-        "type": "Ingredients",
-        "details": "100% natural dried apricots."
-      },
-      {
-        "name": "",
-        "type": "Additional Information",
-        "details": "No added sugars or preservatives."
-      }
-    ]
-  },
-  {
-    "name": "Happilo Premium Seedless Afghani Black Raisins",
-    "quantityPrice": [
-      {
-        "quantity": "200g",
-        "price": "250",
-        "pack": 1
-      },
-      {
-        "quantity": "400g",
-        "price": "450",
-        "pack": 2
-      },
-      {
-        "quantity": "1kg",
-        "price": "900",
-        "pack": 5
-      }
-    ],
-    "files": "6 files",
-    "productInfo": [
-      {
-        "name": "Nature’s Candy",
-        "type": "Description",
-        "details": "Satisfy your sweet cravings with our organic raisins."
-      },
-      {
-        "name": "Snack Smart",
-        "type": "Description",
-        "details": "A convenient and healthy on-the-go snack."
-      },
-      {
-        "name": "",
-        "type": "Ingredients",
-        "details": "100% organic raisins."
-      },
-      {
-        "name": "",
-        "type": "Additional Information",
-        "details": "Naturally sun-dried for optimal flavor."
-      }
-    ]
-  },
-  {
-    "name": "Happilo Premium Roasted & Salted Iranian Pistachios",
-    "quantityPrice": [
-      {
-        "quantity": "200g",
-        "price": "400",
-        "pack": 1
-      },
-      {
-        "quantity": "400g",
-        "price": "750",
-        "pack": 2
-      },
-      {
-        "quantity": "1kg",
-        "price": "1400",
-        "pack": 5
-      }
-    ],
-    "files": "9 files",
-    "productInfo": [
-      {
-        "name": "Savory Delight",
-        "type": "Description",
-        "details": "Experience the rich, roasted flavor of our pistachios."
-      },
-      {
-        "name": "Crack and Enjoy",
-        "type": "Description",
-        "details": "A fun and satisfying snack that’s perfect for cracking open."
-      },
-      {
-        "name": "",
-        "type": "Ingredients",
-        "details": "Roasted pistachios with a touch of salt."
-      },
-      {
-        "name": "",
-        "type": "Additional Information",
-        "details": "High in protein and healthy fats."
-      }
-    ]
-  },
-  {
-    "name": "Happilo Premium Dried Californian Pitted Prunes",
-    "quantityPrice": [
-      {
-        "quantity": "250g",
-        "price": "300",
-        "pack": 1
-      },
-      {
-        "quantity": "500g",
-        "price": "550",
-        "pack": 2
-      },
-      {
-        "quantity": "1kg",
-        "price": "1000",
-        "pack": 5
-      }
-    ],
-    "files": "7 files",
-    "productInfo": [
-      {
-        "name": "Tart and Sweet",
-        "type": "Description",
-        "details": "Enjoy the unique blend of tartness and sweetness in our cranberries."
-      },
-      {
-        "name": "Versatile Ingredient",
-        "type": "Description",
-        "details": "Add a burst of flavor to your salads, cereals, and baked goods."
-      },
-      {
-        "name": "",
-        "type": "Ingredients",
-        "details": "Dried cranberries with a touch of sugar."
-      },
-      {
-        "name": "",
-        "type": "Additional Information",
-        "details": "Rich in antioxidants and vitamins."
-      }
-    ]
-  },
-  {
-    "name": "Happilo Premium Chilean Raw Inshell Walnuts",
-    "quantityPrice": [
-      {
-        "quantity": "250g",
-        "price": "350",
-        "pack": 1
-      },
-      {
-        "quantity": "500g",
-        "price": "650",
-        "pack": 2
-      },
-      {
-        "quantity": "1kg",
-        "price": "1200",
+        "price": 900,
         "pack": 5
       }
     ],
     "files": "8 files",
     "productInfo": [
       {
-        "name": "Heart-Healthy Goodness",
+        "name": "Irresistible Flavor",
         "type": "Description",
-        "details": "Discover the heart-healthy benefits of our premium walnuts."
+        "details": "Experience the irresistible flavor of our crunchy cashews."
       },
       {
-        "name": "Naturally Nutty",
+        "name": "Rich in Nutrients",
         "type": "Description",
-        "details": "Enjoy the rich nutty flavor and crunchy texture."
+        "details": "Packed with essential nutrients for a healthy snack."
       },
       {
         "name": "",
         "type": "Ingredients",
-        "details": "100% natural walnut halves."
+        "details": "Premium quality cashew nuts."
       },
       {
         "name": "",
         "type": "Additional Information",
-        "details": "A good source of omega-3 fatty acids."
+        "details": "Keep in an airtight container for freshness."
+      }
+    ],
+    "discounts": [
+      {
+        "percentage": 15,
+        "startDate": "2023-08-10",
+        "endDate": "2023-08-15"
       }
     ]
   },
   {
-    "name": "Happilo Premium International Omani Dates",
-    "quantityPrice": [
+    "name": "Mixed Nut Medley",
+    "category": "Nuts",
+    "varients": [
       {
-        "quantity": "250g",
-        "price": "250",
+        "quantity": "300g",
+        "price": 350,
         "pack": 1
       },
       {
         "quantity": "500g",
-        "price": "450",
+        "price": 600,
         "pack": 2
       },
       {
         "quantity": "1kg",
-        "price": "900",
+        "price": 1100,
         "pack": 5
       }
     ],
     "files": "6 files",
     "productInfo": [
       {
-        "name": "Natural Energy Boost",
+        "name": "Diverse Nut Selection",
         "type": "Description",
-        "details": "Experience a burst of natural energy with our Medjool dates."
+        "details": "Indulge in a diverse selection of premium nuts in one pack."
       },
       {
-        "name": "Satisfy Your Sweet Tooth",
+        "name": "Snacking Delight",
         "type": "Description",
-        "details": "A naturally sweet treat that’s perfect for guilt-free indulgence."
+        "details": "A delightful option for guilt-free snacking."
       },
       {
         "name": "",
         "type": "Ingredients",
-        "details": "100% natural Medjool dates."
+        "details": "An assortment of nuts including almonds, pistachios, and hazelnuts."
       },
       {
         "name": "",
         "type": "Additional Information",
-        "details": "High in fiber and essential nutrients."
+        "details": "Refrigeration recommended to maintain freshness."
+      }
+    ],
+    "discounts": [
+      {
+        "percentage": 12,
+        "startDate": "2023-08-05",
+        "endDate": "2023-08-12"
       }
     ]
   },
   {
-    "name": "Happilo Premium International Dried Mango",
-    "quantityPrice": [
+    "name": "Premium Roasted Almonds",
+    "category": "Nuts",
+    "varients": [
       {
-        "quantity": "200g",
-        "price": "300",
+        "quantity": "250g",
+        "price": 280,
         "pack": 1
       },
       {
-        "quantity": "400g",
-        "price": "550",
+        "quantity": "450g",
+        "price": 500,
         "pack": 2
       },
       {
-        "quantity": "1kg",
-        "price": "1100",
-        "pack": 5
+        "quantity": "800g",
+        "price": 950,
+        "pack": 4
       }
     ],
     "files": "7 files",
     "productInfo": [
       {
-        "name": "Tropical Delight",
+        "name": "Satisfyingly Crunchy",
         "type": "Description",
-        "details": "Transport yourself to a tropical paradise with our mango slices."
+        "details": "Enjoy the satisfying crunch of our premium roasted almonds."
       },
       {
-        "name": "Naturally Sweet",
+        "name": "Heart-Healthy Snack",
         "type": "Description",
-        "details": "Experience the natural sweetness of sun-dried mangoes."
+        "details": "A heart-healthy snack option for your daily routine."
       },
       {
         "name": "",
         "type": "Ingredients",
-        "details": "100% natural dried mango slices."
+        "details": "Carefully selected California almonds, lightly roasted."
       },
       {
         "name": "",
         "type": "Additional Information",
-        "details": "No added sugars or artificial flavors."
+        "details": "Best consumed within a month of opening."
+      }
+    ],
+    "discounts": [
+      {
+        "percentage": 10,
+        "startDate": "2023-08-03",
+        "endDate": "2023-08-10"
+      }
+    ]
+  },
+  {
+    "name": "Wholesome Nutty Trail Mix",
+    "category": "Nuts",
+    "varients": [
+      {
+        "quantity": "300g",
+        "price": 320,
+        "pack": 1
+      },
+      {
+        "quantity": "600g",
+        "price": 600,
+        "pack": 2
+      },
+      {
+        "quantity": "1.2kg",
+        "price": 1150,
+        "pack": 4
+      }
+    ],
+    "files": "6 files",
+    "productInfo": [
+      {
+        "name": "Nature's Energy Boost",
+        "type": "Description",
+        "details": "Get an energy boost from the goodness of nature with our trail mix."
+      },
+      {
+        "name": "On-the-Go Snacking",
+        "type": "Description",
+        "details": "Perfect for on-the-go snacking during outdoor activities."
+      },
+      {
+        "name": "",
+        "type": "Ingredients",
+        "details": "A mix of nuts, seeds, and dried fruits for a balanced blend."
+      },
+      {
+        "name": "",
+        "type": "Additional Information",
+        "details": "Resealable packaging for convenience."
+      }
+    ],
+    "discounts": [
+      {
+        "percentage": 8,
+        "startDate": "2023-08-08",
+        "endDate": "2023-08-15"
+      }
+    ]
+  },
+  {
+    "name": "Crunchy Pistachio Delight",
+    "category": "Nuts",
+    "varients": [
+      {
+        "quantity": "180g",
+        "price": 250,
+        "pack": 1
+      },
+      {
+        "quantity": "360g",
+        "price": 450,
+        "pack": 2
+      },
+      {
+        "quantity": "750g",
+        "price": 850,
+        "pack": 4
+      }
+    ],
+    "files": "5 files",
+    "productInfo": [
+      {
+        "name": "Addictively Crunchy",
+        "type": "Description",
+        "details": "Experience addictive crunchiness with our pistachios."
+      },
+      {
+        "name": "Nutrient-Packed",
+        "type": "Description",
+        "details": "Pistachios packed with essential nutrients for your well-being."
+      },
+      {
+        "name": "",
+        "type": "Ingredients",
+        "details": "Roasted and salted pistachio nuts."
+      },
+      {
+        "name": "",
+        "type": "Additional Information",
+        "details": "Avoid exposure to direct sunlight to maintain quality."
+      }
+    ],
+    "discounts": [
+      {
+        "percentage": 10,
+        "startDate": "2023-08-01",
+        "endDate": "2023-08-07"
+      }
+    ]
+  },
+  {
+    "name": "Hearty Walnut Halves",
+    "category": "Nuts",
+    "varients": [
+      {
+        "quantity": "200g",
+        "price": 300,
+        "pack": 1
+      },
+      {
+        "quantity": "400g",
+        "price": 550,
+        "pack": 2
+      },
+      {
+        "quantity": "800g",
+        "price": 1000,
+        "pack": 4
+      }
+    ],
+    "files": "4 files",
+    "productInfo": [
+      {
+        "name": "Nature's Brain Food",
+        "type": "Description",
+        "details": "Walnut halves, a natural source of brain-boosting nutrients."
+      },
+      {
+        "name": "Versatile Ingredient",
+        "type": "Description",
+        "details": "A versatile addition to both sweet and savory dishes."
+      },
+      {
+        "name": "",
+        "type": "Ingredients",
+        "details": "Premium quality walnut halves."
+      },
+      {
+        "name": "",
+        "type": "Additional Information",
+        "details": "Sealed packaging for prolonged freshness."
+      }
+    ],
+    "discounts": [
+      {
+        "percentage": 12,
+        "startDate": "2023-08-04",
+        "endDate": "2023-08-11"
+      }
+    ]
+  },
+  {
+    "name": "Classic Salted Peanuts",
+    "category": "Nuts",
+    "varients": [
+      {
+        "quantity": "150g",
+        "price": 150,
+        "pack": 1
+      },
+      {
+        "quantity": "300g",
+        "price": 280,
+        "pack": 2
+      },
+      {
+        "quantity": "600g",
+        "price": 500,
+        "pack": 4
+      }
+    ],
+    "files": "3 files",
+    "productInfo": [
+      {
+        "name": "Timeless Favorite",
+        "type": "Description",
+        "details": "Indulge in the timeless taste of our salted peanuts."
+      },
+      {
+        "name": "Affordable Snack",
+        "type": "Description",
+        "details": "A budget-friendly choice for a satisfying snack."
+      },
+      {
+        "name": "",
+        "type": "Ingredients",
+        "details": "Roasted peanuts with a hint of salt."
+      },
+      {
+        "name": "",
+        "type": "Additional Information",
+        "details": "Shake well before consuming to evenly distribute salt."
+      }
+    ],
+    "discounts": [
+      {
+        "percentage": 10,
+        "startDate": "2023-08-02",
+        "endDate": "2023-08-09"
+      }
+    ]
+  },
+  {
+    "name": "Sweet and Savory Pecans",
+    "category": "Nuts",
+    "varients": [
+      {
+        "quantity": "180g",
+        "price": 320,
+        "pack": 1
+      },
+      {
+        "quantity": "360g",
+        "price": 600,
+        "pack": 2
+      },
+      {
+        "quantity": "750g",
+        "price": 1100,
+        "pack": 4
+      }
+    ],
+    "files": "5 files",
+    "productInfo": [
+      {
+        "name": "Perfect Harmony",
+        "type": "Description",
+        "details": "Discover the perfect harmony of sweet and savory with our pecans."
+      },
+      {
+        "name": "Versatile Snack",
+        "type": "Description",
+        "details": "Ideal for both snacking and adding a twist to dishes."
+      },
+      {
+        "name": "",
+        "type": "Ingredients",
+        "details": "Candied pecans with a touch of salt."
+      },
+      {
+        "name": "",
+        "type": "Additional Information",
+        "details": "Store in a dry place to maintain texture."
+      }
+    ],
+    "discounts": [
+      {
+        "percentage": 10,
+        "startDate": "2023-08-06",
+        "endDate": "2023-08-13"
+      }
+    ]
+  },
+  {
+    "name": "Premium Deluxe Nut Assortment",
+    "category": "Nuts",
+    "varients": [
+      {
+        "quantity": "500g",
+        "price": 800,
+        "pack": 1
+      },
+      {
+        "quantity": "1kg",
+        "price": 1500,
+        "pack": 2
+      },
+      {
+        "quantity": "2kg",
+        "price": 2800,
+        "pack": 4
+      }
+    ],
+    "files": "7 files",
+    "productInfo": [
+      {
+        "name": "Ultimate Nut Experience",
+        "type": "Description",
+        "details": "Embark on the ultimate nut-tasting journey with our assortment."
+      },
+      {
+        "name": "Impressive Gift",
+        "type": "Description",
+        "details": "An impressive gift option for nut enthusiasts."
+      },
+      {
+        "name": "",
+        "type": "Ingredients",
+        "details": "A mix of premium nuts including almonds, cashews, and walnuts."
+      },
+      {
+        "name": "",
+        "type": "Additional Information",
+        "details": "Variety of textures and flavors in every bite."
+      }
+    ],
+    "discounts": [
+      {
+        "percentage": 15,
+        "startDate": "2023-08-07",
+        "endDate": "2023-08-14"
+      }
+    ]
+  },
+  {
+    "name": "Organic Raw Brazil Nuts",
+    "category": "Nuts",
+    "varients": [
+      {
+        "quantity": "200g",
+        "price": 350,
+        "pack": 1
+      },
+      {
+        "quantity": "400g",
+        "price": 650,
+        "pack": 2
+      },
+      {
+        "quantity": "800g",
+        "price": 1200,
+        "pack": 4
+      }
+    ],
+    "files": "4 files",
+    "productInfo": [
+      {
+        "name": "Purely Organic",
+        "type": "Description",
+        "details": "Experience the purity of nature with our raw Brazil nuts."
+      },
+      {
+        "name": "Nutrient-Rich Goodness",
+        "type": "Description",
+        "details": "A source of nutrient-rich goodness for a balanced diet."
+      },
+      {
+        "name": "",
+        "type": "Ingredients",
+        "details": "Certified organic Brazil nuts in their raw state."
+      },
+      {
+        "name": "",
+        "type": "Additional Information",
+        "details": "Refrigeration recommended to extend shelf life."
+      }
+    ],
+    "discounts": [
+      {
+        "percentage": 12,
+        "startDate": "2023-08-09",
+        "endDate": "2023-08-16"
       }
     ]
   }

@@ -4,11 +4,24 @@ import { isEmptyArray } from '../shared/index.js';
 import { MESSAGE, STATUS } from '../shared/messages/constant.js';
 
 export default {
-  createProduct: async (req, res) => {
-    const {name,category,varients,productInfo,discounts}= req.body
+  uploadProductImage: async (req, res) => {
     const {files} = req
     try {
-      await productModel.createProduct({name,category,quantityPricePack:varients,productDescription:productInfo,discounts,files});
+      const imageIds = await productModel.uploadProductImage({files});
+      res
+        .status(200)
+        .send({ status: 1, imageIds:imageIds, message: 'Image Uploaded Successfully' });
+    } catch (err) {
+      console.log(err)
+      res
+        .status(400)
+        .send({ status: 0, message: 'Unable To Create Product', err });
+    }
+  },
+  createProduct: async (req, res) => {
+    const {name,category,varients,productInfo,discounts,imageIds}= req.body
+    try {
+      await productModel.createProduct({name,category,varients,productInfo,discounts,imageIds});
       res
         .status(200)
         .send({ status: 1, message: 'Product Created Successfully' });
@@ -34,22 +47,35 @@ export default {
     }
   },
 
-  findProductById: async (req, res) => {
-    try {
-      const product_id = parseInt(req.params.id);
-      const { data } = await productModel.findProductById(product_id);
-      const count = data.rowCount;
-      const products = data.rows;
-      res.status(200).send({ status: 1, products, count });
-      res
-        .status(200)
-        .send({ status: 1, message: 'Product Created Successfully' });
-    } catch (err) {
-      res
-        .status(400)
-        .send({ status: 0, message: 'Unable To Get Product', err });
-    }
-  },
+  findProductById: async (req, res,next) => {
+        try {
+          const product_id = parseInt(req.params.id);
+          const products = await productModel.findProductById(product_id);
+          res.status(STATUS.OK).send({
+            status: STATUS.SUCCESS,
+            message: MESSAGE.FETCH_SUCCESS,
+            data: products,
+            count: products.length,
+          });
+        } catch (err) {
+          errorHandlerMiddleware(err, req, res, next);
+        }
+      },
+      searchProduct: async (req, res,next) => {
+        console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>",req.query)
+        try {
+          const {query} = req.query;
+          const products = await productModel.searchProduct(query);
+          res.status(STATUS.OK).send({
+            status: STATUS.SUCCESS,
+            message: MESSAGE.FETCH_SUCCESS,
+            data: products,
+            count: products.length,
+          });
+        } catch (err) {
+          errorHandlerMiddleware(err, req, res, next);
+        }
+      },
 
   updateProductById: async (req, res) => {
     try {

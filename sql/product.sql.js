@@ -35,6 +35,8 @@ INSERT INTO tbl_image (original_name, name, date_added)
 VALUES ($1, $2, $3)
 RETURNING id`;
 
+export const SQL_SEARCH_PRODUCT = `SELECT id AS product_id, name AS product_name FROM tbl_product `;
+
 export  const getProductsQuery1 =`
 WITH Variants AS (
   SELECT
@@ -234,4 +236,88 @@ SELECT
 FROM tbl_product_description pd_desc
 GROUP BY pd_desc.product_id
 ) AS descriptions ON descriptions.product_id = p.id
+`
+export  const getProductsByProductId = `
+SELECT
+  p.id AS product_id,
+  p.name AS product_name,
+  pc.name AS category,
+  variants.variants,
+  files.files,
+  discounts.discounts,
+  jsonb_build_object(
+    'ingredients', (
+      SELECT json_agg(
+        json_build_object(
+          'name', pd_desc.name,
+          'details', pd_desc.details
+        )
+      )
+      FROM tbl_product_description pd_desc
+      WHERE pd_desc.product_id = p.id AND pd_desc.type = 'Ingredients'
+    ),
+    'description', (
+      SELECT json_agg(
+        json_build_object(
+          'name', pd_desc.name,
+          'details', pd_desc.details
+        )
+      )
+      FROM tbl_product_description pd_desc
+      WHERE pd_desc.product_id = p.id AND pd_desc.type = 'Description'
+    ),
+    'additionalInformation', (
+      SELECT json_agg(
+        json_build_object(
+          'name', pd_desc.name,
+          'details', pd_desc.details
+        )
+      )
+      FROM tbl_product_description pd_desc
+      WHERE pd_desc.product_id = p.id AND pd_desc.type = 'Additional Information'
+    )
+  ) AS descriptions
+FROM tbl_product AS p
+LEFT JOIN tbl_product_category pc ON pc.id = p.category_id
+LEFT JOIN (
+  SELECT
+    pv.product_id,
+    json_agg(
+      json_build_object(
+        'quantity', pv.variant_name,
+        'price', pv.price,
+        'pack', pv.pack
+      )
+    ) AS variants
+  FROM tbl_product_variant pv
+  GROUP BY pv.product_id
+) AS variants ON variants.product_id = p.id
+LEFT JOIN (
+  SELECT
+    pi.product_id,
+    json_agg(
+      json_build_object(
+        'name', i.name,
+        'original_name', i.original_name,
+        'date_added', i.date_added
+      )
+    ) AS files
+  FROM tbl_product_images pi
+  JOIN tbl_image i ON i.id = pi.image_id
+  GROUP BY pi.product_id
+) AS files ON files.product_id = p.id
+LEFT JOIN (
+  SELECT
+    pd.product_id,
+    json_agg(
+      json_build_object(
+        'percentage', pd.discount_percentage,
+        'start_date', pd.start_date,
+        'end_date', pd.end_date
+      )
+    ) AS discounts
+  FROM tbl_product_discounts pd
+  GROUP BY pd.product_id
+) AS discounts ON discounts.product_id = p.id
+WHERE p.id = $1;
 `

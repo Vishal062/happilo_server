@@ -4,8 +4,9 @@ import { MESSAGE, STATUS } from '../shared/messages/constant.js';
 
  export const  addBrandLogo =  async (req, res, next) => {
     try {
-      const { originalFilename, newFileName } = req.files[0];
-      await brandModel.addBrandLogo({ originalFilename, newFileName });
+      console.log({first:req.files})
+      const { originalname, filename } = req.files[0];
+      await brandModel.addBrandLogo({ originalname, filename });
 
       // Respond with 201 Created for successful brand logo addition
       res.status(STATUS.CREATED).send({
@@ -20,8 +21,8 @@ import { MESSAGE, STATUS } from '../shared/messages/constant.js';
   export const addBanner = async (req, res, next) => {
     try {
       await Promise.all(
-        req.files.map(async ({ originalFilename, newFileName }) => {
-          return brandModel.addBanner({ originalFilename, newFileName });
+        req.files.map(async ({  originalname, filename }) => {
+          return brandModel.addBanner({  originalname, filename });
         })
       );
       res.status(STATUS.CREATED).send({
