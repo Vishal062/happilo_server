@@ -26,9 +26,10 @@ export const descriptionInsertQuery = `
   VALUES ($1, $2, $3, $4)`;
 
 // SQL query to insert discounts into the tbl_product_discounts table
-export const discountInsertQuery = `
-  INSERT INTO tbl_product_discounts (product_id, seller_id, discount_percentage, start_date, end_date)
-  VALUES ($1, $2, $3, $4, $5)`;
+export const discountInsertQuery = `insert_product_discount`
+  // INSERT INTO tbl_product_discounts (product_id, seller_id, discount_percentage, start_date, end_date)
+  // VALUES ($1, $2, $3, $4, $5)`;
+  
 
 export const SQL_INSERT_IMAGE = `
 INSERT INTO tbl_image (original_name, name, date_added)
