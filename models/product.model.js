@@ -1,4 +1,4 @@
-import { pool } from '../config/database.js';
+import { call, pool } from '../config/database.js';
 import { TRANSACTION_STATUS } from '../shared/messages/constant.js';
 import { brandSQL, productSQL } from '../sql/index.js';
 import { SQL_SEARCH_PRODUCT, getProductsByProductId, getProductsQuery3 } from '../sql/product.sql.js';
@@ -33,7 +33,9 @@ export const createProduct = async (productDetails) => {
         Promise.all(productInfo.map(description => client.query(productSQL.descriptionInsertQuery, [productId, description.name, description.type, description.details]))),
         Promise.all(discounts.map(discount => {
           const { sellerID = 1, percentage, startDate, endDate } = discount;
-          return client.query(productSQL.discountInsertQuery, [productId, sellerID, percentage, startDate, endDate]);
+          const args = [productId, sellerID, percentage, startDate, endDate];
+          const result =  call('insert_product_discount', ...args);
+          console.log({result})
         }))
       ]);
 
