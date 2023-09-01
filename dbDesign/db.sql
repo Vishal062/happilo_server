@@ -1,8 +1,8 @@
--- Adminer 4.8.1 PostgreSQL 15.0 dump
+-- Adminer 4.8.1 PostgreSQL 14.5 dump
 
 DROP TABLE IF EXISTS "tbl_address";
 DROP SEQUENCE IF EXISTS tbl_address_id_seq;
-CREATE SEQUENCE tbl_address_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1;
+CREATE SEQUENCE tbl_address_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 START 1 CACHE 1;
 
 CREATE TABLE "public"."tbl_address" (
     "id" integer DEFAULT nextval('tbl_address_id_seq') NOT NULL,
@@ -17,7 +17,7 @@ COMMENT ON COLUMN "public"."tbl_address"."address_type" IS 'e.g. Home, Work';
 
 DROP TABLE IF EXISTS "tbl_area";
 DROP SEQUENCE IF EXISTS tbl_area_id_seq;
-CREATE SEQUENCE tbl_area_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1;
+CREATE SEQUENCE tbl_area_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 START 1 CACHE 1;
 
 CREATE TABLE "public"."tbl_area" (
     "id" integer DEFAULT nextval('tbl_area_id_seq') NOT NULL,
@@ -34,7 +34,7 @@ COMMENT ON COLUMN "public"."tbl_area"."name" IS 'Area Name / Street Name';
 
 DROP TABLE IF EXISTS "tbl_area_product_availability";
 DROP SEQUENCE IF EXISTS tbl_area_product_availability_id_seq;
-CREATE SEQUENCE tbl_area_product_availability_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1;
+CREATE SEQUENCE tbl_area_product_availability_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 START 1 CACHE 1;
 
 CREATE TABLE "public"."tbl_area_product_availability" (
     "id" integer DEFAULT nextval('tbl_area_product_availability_id_seq') NOT NULL,
@@ -48,7 +48,7 @@ CREATE TABLE "public"."tbl_area_product_availability" (
 
 DROP TABLE IF EXISTS "tbl_banner";
 DROP SEQUENCE IF EXISTS tbl_banner_id_seq1;
-CREATE SEQUENCE tbl_banner_id_seq1 INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1;
+CREATE SEQUENCE tbl_banner_id_seq1 INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 START 7 CACHE 1;
 
 CREATE TABLE "public"."tbl_banner" (
     "id" integer DEFAULT nextval('tbl_banner_id_seq1') NOT NULL,
@@ -69,7 +69,7 @@ INSERT INTO "tbl_banner" ("id", "image_id", "status", "date_added") VALUES
 
 DROP TABLE IF EXISTS "tbl_brand_logo";
 DROP SEQUENCE IF EXISTS tbl_brand_logo_id_seq;
-CREATE SEQUENCE tbl_brand_logo_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1;
+CREATE SEQUENCE tbl_brand_logo_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 START 1 CACHE 1;
 
 CREATE TABLE "public"."tbl_brand_logo" (
     "id" integer DEFAULT nextval('tbl_brand_logo_id_seq') NOT NULL,
@@ -84,7 +84,7 @@ INSERT INTO "tbl_brand_logo" ("id", "image_id", "status", "date_added") VALUES
 
 DROP TABLE IF EXISTS "tbl_cart";
 DROP SEQUENCE IF EXISTS tbl_cart_id_seq;
-CREATE SEQUENCE tbl_cart_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1;
+CREATE SEQUENCE tbl_cart_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 START 1 CACHE 1;
 
 CREATE TABLE "public"."tbl_cart" (
     "id" integer DEFAULT nextval('tbl_cart_id_seq') NOT NULL,
@@ -95,7 +95,7 @@ CREATE TABLE "public"."tbl_cart" (
 
 DROP TABLE IF EXISTS "tbl_cart_item";
 DROP SEQUENCE IF EXISTS tbl_cart_item_id_seq;
-CREATE SEQUENCE tbl_cart_item_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1;
+CREATE SEQUENCE tbl_cart_item_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 START 1 CACHE 1;
 
 CREATE TABLE "public"."tbl_cart_item" (
     "id" integer DEFAULT nextval('tbl_cart_item_id_seq') NOT NULL,
@@ -109,7 +109,7 @@ CREATE TABLE "public"."tbl_cart_item" (
 
 DROP TABLE IF EXISTS "tbl_customer";
 DROP SEQUENCE IF EXISTS tbl_customer_id_seq;
-CREATE SEQUENCE tbl_customer_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1;
+CREATE SEQUENCE tbl_customer_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 START 1 CACHE 1;
 
 CREATE TABLE "public"."tbl_customer" (
     "id" integer DEFAULT nextval('tbl_customer_id_seq') NOT NULL,
@@ -128,7 +128,7 @@ COMMENT ON COLUMN "public"."tbl_customer"."image_id" IS 'Profile Pic referring i
 
 DROP TABLE IF EXISTS "tbl_image";
 DROP SEQUENCE IF EXISTS tbl_image_id_seq;
-CREATE SEQUENCE tbl_image_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1;
+CREATE SEQUENCE tbl_image_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 START 257 CACHE 1;
 
 CREATE TABLE "public"."tbl_image" (
     "id" integer DEFAULT nextval('tbl_image_id_seq') NOT NULL,
@@ -240,11 +240,164 @@ INSERT INTO "tbl_image" ("id", "name", "original_name", "date_added") VALUES
 (101,	'1692950293638-533141291.webp',	'back_0f3f33f7-c2c9-4596-9606-f7525faa22dc.webp',	'2023-08-25 13:28:13.761'),
 (102,	'1692950293645-377263533.webp',	'packof2_5a8d8a48-be7f-42fe-ab66-1a92229d6c31.webp',	'2023-08-25 13:28:13.761'),
 (103,	'1692950293646-510650327.webp',	'packof2_74fd9419-7995-4b40-bb5f-f5dc80b36551.webp',	'2023-08-25 13:28:13.761'),
-(104,	'1692950293654-153921458.webp',	'packof5_1007138d-8730-463c-b41c-99b789a9633f.webp',	'2023-08-25 13:28:13.761');
+(104,	'1692950293654-153921458.webp',	'packof5_1007138d-8730-463c-b41c-99b789a9633f.webp',	'2023-08-25 13:28:13.761'),
+(105,	'1693372819927-407156464.webp',	'1.webp',	'2023-08-30 10:50:20.014'),
+(106,	'1693372819932-686685747.webp',	'4_df2cd298-c85a-4f44-a0f2-29a05688dff0.webp',	'2023-08-30 10:50:20.016'),
+(107,	'1693372819943-988444117.webp',	'5_15e5304d-6d75-47d6-b566-5266f8265eaa.webp',	'2023-08-30 10:50:20.016'),
+(108,	'1693372819945-738244168.webp',	'6_a493dd64-748f-43be-ba10-36f27abc4a09.webp',	'2023-08-30 10:50:20.016'),
+(109,	'1693372819948-79060356.webp',	'8_b590d837-065a-4802-8859-a50e471614d7 (1).webp',	'2023-08-30 10:50:20.016'),
+(110,	'1693372819949-638980990.webp',	'8_b590d837-065a-4802-8859-a50e471614d7.webp',	'2023-08-30 10:50:20.016'),
+(111,	'1693372819950-443250153.webp',	'rosealmond_2_f5465ba9-ebd0-410d-82d5-171a6ca560b8.webp',	'2023-08-30 10:50:20.016'),
+(112,	'1693399838697-76512546.webp',	'1.webp',	'2023-08-30 18:20:38.832'),
+(113,	'1693399838701-648869368.webp',	'3_6d3d8e06-cdbd-4e5b-a08d-d0f1692a3af0.webp',	'2023-08-30 18:20:38.832'),
+(114,	'1693399838704-168436243.webp',	'4_658a6d34-c4c1-4f75-9139-d0cd4440fd34.webp',	'2023-08-30 18:20:38.832'),
+(115,	'1693399838713-864359655.webp',	'5_528be5c1-6731-4167-a889-3912629d4ab3.webp',	'2023-08-30 18:20:38.832'),
+(116,	'1693399838715-18888706.webp',	'6_8cbbe720-e17d-4925-989e-191cfc3774a7.webp',	'2023-08-30 18:20:38.833'),
+(117,	'1693399838737-475237802.webp',	'7_e20cd05e-4828-4acf-8ceb-94039dbe9659.webp',	'2023-08-30 18:20:38.833'),
+(118,	'1693399838738-949265308.webp',	'pista_1.webp',	'2023-08-30 18:20:38.833'),
+(119,	'1693399838739-518283374.webp',	'pista_2.webp',	'2023-08-30 18:20:38.833'),
+(120,	'1693400042495-495347266.webp',	'1.webp',	'2023-08-30 18:24:02.563'),
+(121,	'1693400042496-965499765.webp',	'3_d7e13bac-bf5c-4f64-aef2-cd7365bd9749.webp',	'2023-08-30 18:24:02.563'),
+(122,	'1693400042497-52047076.webp',	'4_a0755d2f-eb06-4cab-b6c3-fa9c7375b6f7.webp',	'2023-08-30 18:24:02.563'),
+(123,	'1693400042498-331506214.webp',	'5_b2dd5ea3-633f-40d3-9a76-55ba753882b3.webp',	'2023-08-30 18:24:02.563'),
+(124,	'1693400042499-899748295.webp',	'6_e39202f3-2216-4ef3-80b9-9519586c53d9.webp',	'2023-08-30 18:24:02.563'),
+(125,	'1693400042511-755047494.webp',	'7_f72fbf4f-20ab-4a7b-bdd6-937e45b7081b.webp',	'2023-08-30 18:24:02.563'),
+(126,	'1693400042512-272493647.webp',	'rosealmond_1.webp',	'2023-08-30 18:24:02.563'),
+(127,	'1693400042512-738911417.webp',	'rosealmond_2.webp',	'2023-08-30 18:24:02.563'),
+(128,	'1693400230737-742053779.webp',	'1.webp',	'2023-08-30 18:27:10.799'),
+(129,	'1693400230737-508044304.webp',	'2_22361d92-8bfd-4ed1-8e3a-adbea51b337a.webp',	'2023-08-30 18:27:10.799'),
+(130,	'1693400230738-536655988.webp',	'3_d607ffd8-45f0-4069-a17a-278e6dd0cfa2.webp',	'2023-08-30 18:27:10.799'),
+(131,	'1693400230739-675065119.webp',	'5_9dd69a06-04a5-488a-aecb-4c7c663272b4.webp',	'2023-08-30 18:27:10.799'),
+(132,	'1693400230740-515932754.webp',	'6_c238a94a-87d5-44ef-be81-e50ca7e767c5.webp',	'2023-08-30 18:27:10.799'),
+(133,	'1693400230750-874644633.webp',	'Back_2_e85ac4cd-3f47-4d69-a9a1-aba236225a6e.webp',	'2023-08-30 18:27:10.799'),
+(134,	'1693400230755-221573280.webp',	'rosealmond_1_c0b9c35c-77a2-41b3-973f-fee6b251e278.webp',	'2023-08-30 18:27:10.799'),
+(135,	'1693400230756-55117477.webp',	'rosealmond_2_47448a89-546b-44ff-8323-84b436f55885.webp',	'2023-08-30 18:27:10.799'),
+(136,	'1693400722897-92349783.webp',	'1.webp',	'2023-08-30 18:35:22.971'),
+(137,	'1693400722898-981173144.webp',	'2_00101c40-565d-4e56-a422-180822b64ec9.webp',	'2023-08-30 18:35:22.971'),
+(138,	'1693400722898-318815319.webp',	'3_4a3958aa-1362-47d2-bc0a-a5957a5d6c6e.webp',	'2023-08-30 18:35:22.972'),
+(139,	'1693400722900-79302519.webp',	'4_5a60deca-dba3-4b86-a948-85fad03f66ee.webp',	'2023-08-30 18:35:22.972'),
+(140,	'1693400722901-832657047.webp',	'5_cdc38840-63a6-4ba9-bdf1-a30509e40153.webp',	'2023-08-30 18:35:22.972'),
+(141,	'1693400722902-315693089.webp',	'6_a5ad47da-f6f9-4f49-99b8-e430bcbeeedb.webp',	'2023-08-30 18:35:22.972'),
+(142,	'1693400722904-557166105.webp',	'7_5483f7ea-8048-41d3-b3b1-bee1b2b1a133.webp',	'2023-08-30 18:35:22.972'),
+(143,	'1693400722905-695104651.webp',	'8_3adc39ff-60aa-4bd0-878e-32ed9880568a.webp',	'2023-08-30 18:35:22.972'),
+(144,	'1693401014297-170221219.webp',	'1.webp',	'2023-08-30 18:40:14.353'),
+(145,	'1693401014297-765241545.webp',	'2_d51f1183-78fb-450a-8fd6-b5a834e76193.webp',	'2023-08-30 18:40:14.354'),
+(146,	'1693401014298-357638801.webp',	'3v2.webp',	'2023-08-30 18:40:14.354'),
+(147,	'1693401014301-595019341.webp',	'4_4027e504-b739-4499-b317-74a9b43ac268.webp',	'2023-08-30 18:40:14.354'),
+(148,	'1693401014302-437728727.webp',	'5_d3febecb-d445-4552-abcc-fd4dbcfb089e.webp',	'2023-08-30 18:40:14.354'),
+(149,	'1693401014303-164535375.webp',	'6_6638a01d-8414-40b2-a6f0-d94c89edf499.webp',	'2023-08-30 18:40:14.354'),
+(150,	'1693401014304-781647989.webp',	'7_aa44a36e-705d-435e-8434-5aeccc008ab6.webp',	'2023-08-30 18:40:14.354'),
+(151,	'1693401014310-410789674.webp',	'8_acdb6359-7d9a-4ed9-bc70-df0cfe8398ee.webp',	'2023-08-30 18:40:14.354'),
+(152,	'1693401919999-835349614.webp',	'1.webp',	'2023-08-30 18:55:20.06'),
+(153,	'1693401920001-816795520.webp',	'2_e8c01f47-0bb0-4f14-a673-4a266e1f6eed.webp',	'2023-08-30 18:55:20.06'),
+(154,	'1693401920001-271156818.webp',	'3_9d0aa563-f120-42bf-8c8c-9ca08951f100.webp',	'2023-08-30 18:55:20.06'),
+(155,	'1693401920003-929544148.webp',	'4_3cfea713-e7bc-4857-9c73-1f3555868864.webp',	'2023-08-30 18:55:20.06'),
+(156,	'1693401920003-586383729.webp',	'5_53d4b37e-79b4-4201-bde9-908d34195656.webp',	'2023-08-30 18:55:20.06'),
+(157,	'1693401920004-527161358.webp',	'6_a0ab0389-1a18-4b75-a486-45c85e9af66e.webp',	'2023-08-30 18:55:20.06'),
+(158,	'1693401920007-420858560.webp',	'7_40e875e6-8927-4d91-9f57-9ad76dce1de6.webp',	'2023-08-30 18:55:20.06'),
+(159,	'1693401920010-522931267.webp',	'8_a0f31fb0-9ae4-4ff0-b40a-ce3cb0216b62.webp',	'2023-08-30 18:55:20.06'),
+(160,	'1693402083449-598369773.webp',	'1.webp',	'2023-08-30 18:58:03.502'),
+(161,	'1693402083449-382504879.webp',	'2_acf5e021-d74c-4b0f-a0b2-cc48905b560a.webp',	'2023-08-30 18:58:03.502'),
+(162,	'1693402083449-801197316.webp',	'3v2_7a516d2b-0dca-4da1-985a-d99913d304c6.webp',	'2023-08-30 18:58:03.502'),
+(163,	'1693402083454-617172145.webp',	'4_cb23a139-5db3-4fe2-90cd-8df75b5b6d3f.webp',	'2023-08-30 18:58:03.502'),
+(164,	'1693402083455-268288383.webp',	'5_af0fe680-ba31-40c2-b08c-bfe3b1de65de.webp',	'2023-08-30 18:58:03.502'),
+(165,	'1693402083456-444421251.webp',	'6_814091d8-3955-4afb-b229-2c11c0f14220.webp',	'2023-08-30 18:58:03.502'),
+(166,	'1693402083457-292130530.webp',	'7_31739c91-2312-43e9-a4b3-e44401e61d4c.webp',	'2023-08-30 18:58:03.502'),
+(167,	'1693402083458-240164641.webp',	'8_aeac9872-23d8-4fed-bd99-71ca89d15f15.webp',	'2023-08-30 18:58:03.502'),
+(168,	'1693402707089-5482957.webp',	'1.webp',	'2023-08-30 19:08:27.168'),
+(169,	'1693402707099-327183880.webp',	'3_5dacdfce-4b01-4d5e-8094-1aae7170d0c7.webp',	'2023-08-30 19:08:27.169'),
+(170,	'1693402707100-685636519.webp',	'4_b13ea2bd-3610-40a6-ad6b-a5ef19882591.webp',	'2023-08-30 19:08:27.169'),
+(171,	'1693402707101-213304972.webp',	'5_4da54dd4-8e81-4562-a949-4035c12c4d45.webp',	'2023-08-30 19:08:27.169'),
+(172,	'1693402707103-231553034.webp',	'7_c35485e0-a57a-42cc-a675-7ffc083b3772.webp',	'2023-08-30 19:08:27.169'),
+(173,	'1693402707103-434347914.webp',	'pistachiobrittle_1_4f87c618-4078-4842-a442-def3d7bf32e3.webp',	'2023-08-30 19:08:27.169'),
+(174,	'1693402707103-836257280.webp',	'pistachiobrittle_2_c47052fe-80fa-40cb-aa6c-108ae2f05d21.webp',	'2023-08-30 19:08:27.169'),
+(175,	'1693402707109-741985085.webp',	'pistachiobrittle_3_d4252041-2465-47bb-af8d-bd9ceb6a2061.webp',	'2023-08-30 19:08:27.169'),
+(176,	'1693403201744-13806988.webp',	'1.webp',	'2023-08-30 19:16:41.81'),
+(177,	'1693403201749-779529867.webp',	'71EYIf3e4CL._SL1500.webp',	'2023-08-30 19:16:41.81'),
+(178,	'1693403201750-178349246.webp',	'71wAnjCrRgL._SL1500.webp',	'2023-08-30 19:16:41.81'),
+(179,	'1693403201750-179595444.webp',	'81e5a2xE5QL._SL1500.webp',	'2023-08-30 19:16:41.81'),
+(180,	'1693403201751-584364365.webp',	'81JPl41RsCL._SL1500.webp',	'2023-08-30 19:16:41.81'),
+(181,	'1693403201759-868433642.webp',	'81WtREI_v_L._SL1500.webp',	'2023-08-30 19:16:41.81'),
+(182,	'1693403201762-951796379.webp',	'81XfxnnfbFL._SL1500.webp',	'2023-08-30 19:16:41.81'),
+(183,	'1693403201763-266634990.webp',	'v2_21.webp',	'2023-08-30 19:16:41.81'),
+(184,	'1693403733513-63010532.webp',	'1.webp',	'2023-08-30 19:25:33.595'),
+(185,	'1693403733518-672172185.webp',	'3_dede78a2-cf48-470c-acc1-4108e7a995c6.webp',	'2023-08-30 19:25:33.596'),
+(186,	'1693403733518-399364215.webp',	'4_86d22319-9af4-424c-a3b7-0efc1bc57cab.webp',	'2023-08-30 19:25:33.596'),
+(187,	'1693403733521-189161179.webp',	'5_a3fe1694-3b88-4be7-89cf-c73c706ae660.webp',	'2023-08-30 19:25:33.596'),
+(188,	'1693403733522-422593859.webp',	'7_c2eedf5d-c5df-4f78-adbb-d1b448e42607.webp',	'2023-08-30 19:25:33.596'),
+(189,	'1693403733524-757694795.webp',	'cashewbrittle_1.webp',	'2023-08-30 19:25:33.596'),
+(190,	'1693403733525-696412578.webp',	'cashewbrittle_2_c941c5a9-1769-4740-92bd-14562b894cde.webp',	'2023-08-30 19:25:33.596'),
+(191,	'1693403733526-2093011.webp',	'cashewbrittle_3_7ca6a182-223a-4889-80b8-d6e0559f0244.webp',	'2023-08-30 19:25:33.596'),
+(192,	'1693404805549-147548269.webp',	'1.webp',	'2023-08-30 19:43:25.6'),
+(193,	'1693404805550-679466192.webp',	'3_ae73fd94-6db9-4efd-b840-dc353fd84588.webp',	'2023-08-30 19:43:25.6'),
+(194,	'1693404805550-777668155.webp',	'4_1cca094f-f92f-4859-9ce2-cec683defe4f.webp',	'2023-08-30 19:43:25.6'),
+(195,	'1693404805555-786303358.webp',	'5_42c3220b-ea91-4ae6-a1ec-abaf3011e7c2.webp',	'2023-08-30 19:43:25.6'),
+(196,	'1693404805556-729241932.webp',	'7_f2fbd7d1-b5f2-427f-ad3d-18fd5b70af61.webp',	'2023-08-30 19:43:25.6'),
+(197,	'1693404805556-270932581.webp',	'AlmondBrittle_1_c1309bb1-ab0c-4318-b4a8-ed51fe0c352a.webp',	'2023-08-30 19:43:25.6'),
+(198,	'1693404805559-54376357.webp',	'AlmondBrittle_2_a2529521-48cc-45f6-a3d3-0bc5f7c7717a.webp',	'2023-08-30 19:43:25.6'),
+(199,	'1693404805559-79725190.webp',	'AlmondBrittle_3_15c54827-0559-4cc9-a88d-2a2b77b33238.webp',	'2023-08-30 19:43:25.6'),
+(200,	'1693405204780-158957027.webp',	'1.webp',	'2023-08-30 19:50:04.856'),
+(201,	'1693405204781-37986542.webp',	'2_108.webp',	'2023-08-30 19:50:04.856'),
+(202,	'1693405204782-936076976.webp',	'3copy_1.webp',	'2023-08-30 19:50:04.856'),
+(203,	'1693405204786-537215762.webp',	'4_69.webp',	'2023-08-30 19:50:04.856'),
+(204,	'1693405204787-73742325.webp',	'5_8.webp',	'2023-08-30 19:50:04.856'),
+(205,	'1693405204789-319193934.webp',	'7_6.webp',	'2023-08-30 19:50:04.856'),
+(206,	'1693406187405-69969335.webp',	'1.webp',	'2023-08-30 20:06:27.465'),
+(207,	'1693406187408-732043502.webp',	'2_4eb653fc-d71f-4930-8e98-b2afce45061d.webp',	'2023-08-30 20:06:27.465'),
+(208,	'1693406187417-600020909.webp',	'3_417f8913-5cc2-4791-b87b-0037e09e45df.webp',	'2023-08-30 20:06:27.465'),
+(209,	'1693406187418-509430602.webp',	'4v2_85ae5ad1-f863-4d5b-a801-f9ba9e7c7a14.webp',	'2023-08-30 20:06:27.465'),
+(210,	'1693406187419-776974543.webp',	'5_7d01cdab-9343-4f81-b27e-38e9d9a55520.webp',	'2023-08-30 20:06:27.465'),
+(211,	'1693406187421-212343031.webp',	'6v3_d6d99ac9-b24f-4de5-a411-70e12ba38af5.webp',	'2023-08-30 20:06:27.465'),
+(212,	'1693406187422-839212555.webp',	'7_4cbe0bca-93b9-4f69-aa5a-676bcfa5c898.webp',	'2023-08-30 20:06:27.465'),
+(213,	'1693406781290-33330906.webp',	'1.webp',	'2023-08-30 20:16:21.349'),
+(214,	'1693406781290-407572712.webp',	'2_8f4484d1-0feb-44e8-962c-1c2670452ac3.webp',	'2023-08-30 20:16:21.349'),
+(215,	'1693406781291-705937127.webp',	'3_1a3b8148-c2ee-480b-bf31-8e89b5cb4ba7.webp',	'2023-08-30 20:16:21.349'),
+(216,	'1693406781292-632744967.webp',	'4v2_e1a0b3e9-fa9d-4a74-a335-9ded29b34dd7.webp',	'2023-08-30 20:16:21.349'),
+(217,	'1693406781294-233463547.webp',	'5_fe838721-b6df-4960-b945-c3c42254464c.webp',	'2023-08-30 20:16:21.349'),
+(218,	'1693406781295-213511547.webp',	'6v3_1df4db21-d669-4ab5-bb90-d93bd27d41b2.webp',	'2023-08-30 20:16:21.349'),
+(219,	'1693406781295-554477155.webp',	'7_58951a50-386a-4a49-87ee-e7c6017face9.webp',	'2023-08-30 20:16:21.349'),
+(220,	'1693466242801-784717971.webp',	'1.webp',	'2023-08-31 12:47:22.87'),
+(221,	'1693466242807-848380400.webp',	'2_fea87ade-c0bc-49d3-9838-194d135072af.webp',	'2023-08-31 12:47:22.871'),
+(222,	'1693466242813-516295264.webp',	'3_528d5416-40a3-4b56-81c3-9cc995c70dd3.webp',	'2023-08-31 12:47:22.871'),
+(223,	'1693466242814-920342888.webp',	'4v2_9e34285d-704c-49de-8d2e-1b9749caaa7f.webp',	'2023-08-31 12:47:22.871'),
+(224,	'1693466242815-694902524.webp',	'5_23415c0d-ab4e-40d4-b151-846c1a2f1c6b.webp',	'2023-08-31 12:47:22.872'),
+(225,	'1693466242820-86940920.webp',	'6v3_8f6a29ce-a941-4b23-8cff-98b1f3870356.webp',	'2023-08-31 12:47:22.872'),
+(226,	'1693466242821-207088539.webp',	'7_ea2cfc05-5d38-4e3e-8432-76a6e6b88bcc.webp',	'2023-08-31 12:47:22.872'),
+(227,	'1693467091477-315811569.webp',	'1.webp',	'2023-08-31 13:01:31.657'),
+(228,	'1693467091477-377929571.webp',	'2_23aa6b25-422e-49d3-ac1d-e674459e1a27.webp',	'2023-08-31 13:01:31.657'),
+(229,	'1693467091478-516467178.webp',	'3_89373ec8-27ed-46cc-9dab-092bc61a7a17.webp',	'2023-08-31 13:01:31.657'),
+(230,	'1693467091480-848625212.webp',	'4_ea2615e6-f974-4ec5-a0ee-2bee1dcabb87.webp',	'2023-08-31 13:01:31.657'),
+(231,	'1693467091481-854735080.webp',	'5_bbc2cfb2-5592-42cc-80cd-5e1a791f7151.webp',	'2023-08-31 13:01:31.657'),
+(232,	'1693467091487-419404574.webp',	'6_a435e447-94cd-436d-b261-a700d240a5b2.webp',	'2023-08-31 13:01:31.657'),
+(233,	'1693467091488-216892140.webp',	'7_7828554c-6456-46a8-b6ed-c29740470f6b.webp',	'2023-08-31 13:01:31.657'),
+(234,	'1693467091489-304631241.webp',	'WJiNytY.webp',	'2023-08-31 13:01:31.657'),
+(235,	'1693542261436-295666599.webp',	'1.webp',	'2023-09-01 09:54:21.502'),
+(236,	'1693542261439-946252698.webp',	'2_1715406a-8de2-4c2c-ab64-b133d2859053.webp',	'2023-09-01 09:54:21.514'),
+(237,	'1693542261442-166599104.webp',	'4_e25215e8-9f00-4d48-86b8-40ce92af9024.webp',	'2023-09-01 09:54:21.514'),
+(238,	'1693542261447-78809476.webp',	'5_7a9e94e2-512c-4c27-b8bb-91c453c634c8.webp',	'2023-09-01 09:54:21.514'),
+(239,	'1693542261455-197597032.webp',	'6_1c1baedf-a359-47a6-935c-e16aa84d3b91.webp',	'2023-09-01 09:54:21.514'),
+(240,	'1693542261456-616628973.webp',	'7_b51b8583-e807-4e7f-9329-1c0d27cea0ad.webp',	'2023-09-01 09:54:21.514'),
+(241,	'1693542261457-461346251.webp',	'fj7wX0fQ.webp',	'2023-09-01 09:54:21.514'),
+(242,	'1693542814167-692571205.webp',	'1.webp',	'2023-09-01 10:03:34.23'),
+(243,	'1693542814168-466062270.webp',	'2_7314fd51-eb56-4a53-804a-64d27ee448d4.webp',	'2023-09-01 10:03:34.23'),
+(244,	'1693542814168-13774964.webp',	'2v2_fa80a308-196c-497e-9713-ca8a33d832e4.webp',	'2023-09-01 10:03:34.23'),
+(245,	'1693542814174-576966513.webp',	'3_173c96c6-db62-4c42-a26d-9609baaeb143.webp',	'2023-09-01 10:03:34.23'),
+(246,	'1693542814176-606187110.webp',	'4_46e58570-7cfc-4806-8811-28c510d146db.webp',	'2023-09-01 10:03:34.23'),
+(247,	'1693542814176-463831960.webp',	'5_6915df91-f30d-41bc-8ade-c6c27fa17897.webp',	'2023-09-01 10:03:34.23'),
+(248,	'1693542814178-733788888.webp',	'6_c64fd8d9-4add-4e19-8f8e-1716a59dc22e.webp',	'2023-09-01 10:03:34.23'),
+(249,	'1693542814185-683200286.webp',	'7Hf84v08.webp',	'2023-09-01 10:03:34.23'),
+(250,	'1693543127651-648310267.webp',	'1.webp',	'2023-09-01 10:08:47.712'),
+(251,	'1693543127652-627580365.webp',	'2_e60756c4-4c43-48bc-a850-a0ad9ae65804.webp',	'2023-09-01 10:08:47.712'),
+(252,	'1693543127652-678203423.webp',	'2v2_82051b25-2d15-4080-b519-c90c00cf009d.webp',	'2023-09-01 10:08:47.712'),
+(253,	'1693543127653-77916517.webp',	'3_ff94a67b-5e15-4f25-b242-259c6ab58f2f.webp',	'2023-09-01 10:08:47.712'),
+(254,	'1693543127655-572816035.webp',	'4_9d05ad64-49ef-43a0-9d8f-3659608cc023.webp',	'2023-09-01 10:08:47.712'),
+(255,	'1693543127656-880209729.webp',	'5_5b1cbfc0-2302-4a7e-a412-8393142b42db.webp',	'2023-09-01 10:08:47.712'),
+(256,	'1693543127657-160788698.webp',	'6_55b42399-a269-43c2-9d25-7756959415c7.webp',	'2023-09-01 10:08:47.712'),
+(257,	'1693543127659-94915010.webp',	'I2gjhU4.webp',	'2023-09-01 10:08:47.712');
 
 DROP TABLE IF EXISTS "tbl_order";
 DROP SEQUENCE IF EXISTS tbl_order_id_seq;
-CREATE SEQUENCE tbl_order_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1;
+CREATE SEQUENCE tbl_order_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 START 1 CACHE 1;
 
 CREATE TABLE "public"."tbl_order" (
     "id" integer DEFAULT nextval('tbl_order_id_seq') NOT NULL,
@@ -257,7 +410,7 @@ CREATE TABLE "public"."tbl_order" (
 
 DROP TABLE IF EXISTS "tbl_order_item";
 DROP SEQUENCE IF EXISTS tbl_order_item_id_seq;
-CREATE SEQUENCE tbl_order_item_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1;
+CREATE SEQUENCE tbl_order_item_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 START 1 CACHE 1;
 
 CREATE TABLE "public"."tbl_order_item" (
     "id" integer DEFAULT nextval('tbl_order_item_id_seq') NOT NULL,
@@ -273,7 +426,7 @@ CREATE TABLE "public"."tbl_order_item" (
 
 DROP TABLE IF EXISTS "tbl_payment";
 DROP SEQUENCE IF EXISTS tbl_payment_id_seq;
-CREATE SEQUENCE tbl_payment_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1;
+CREATE SEQUENCE tbl_payment_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 START 1 CACHE 1;
 
 CREATE TABLE "public"."tbl_payment" (
     "id" integer DEFAULT nextval('tbl_payment_id_seq') NOT NULL,
@@ -298,7 +451,7 @@ COMMENT ON COLUMN "public"."tbl_payment"."payment_details" IS 'additional paymen
 
 DROP TABLE IF EXISTS "tbl_product";
 DROP SEQUENCE IF EXISTS tbl_product_id_seq1;
-CREATE SEQUENCE tbl_product_id_seq1 INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1;
+CREATE SEQUENCE tbl_product_id_seq1 INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 START 33 CACHE 1;
 
 CREATE TABLE "public"."tbl_product" (
     "id" integer DEFAULT nextval('tbl_product_id_seq1') NOT NULL,
@@ -316,11 +469,34 @@ INSERT INTO "tbl_product" ("id", "name", "category_id") VALUES
 (8,	'Happilo Premium International Omani Dates',	8),
 (9,	'Happilo Premium Roasted & Salted Iranian Pistachios',	9),
 (10,	'Happilo Premium Seedless Afghani Black Raisins',	10),
-(4,	'Happilo Fresh & Delicious Crunchy Cashews',	4);
+(4,	'Happilo Fresh & Delicious Crunchy Cashews',	4),
+(11,	'Assorted Dry Fruit Bar Pack',	11),
+(12,	'Pistachios Dry Fruit Bar Pack',	12),
+(13,	'Rose Almonds Dry Fruit Bar Pack',	13),
+(14,	'Rose Almonds Mini Dry Fruit Bar Gift Box',	14),
+(15,	'Happilo Premium Chocolate Cashew Spread',	15),
+(16,	'Happilo Premium Chocolate Almond Spread',	16),
+(17,	'Happilo Chocolate Hazelnut Spread',	17),
+(18,	'Happilo Premium Chocolate Almond Spread',	18),
+(19,	'Happilo Premium Pistachios Brittle Box',	19),
+(20,	'Happilo Premium Almond Brittle Gift Pack',	20),
+(21,	'Happilo Premium Almond Brittle Gift Pack',	21),
+(22,	'Happilo Premium Cashew Brittle Celebrations Pack',	22),
+(23,	'Happilo Premium Almond Brittle Celebrations',	23),
+(24,	'Happilo Party Snack Premium Limited Edition Royal Challengers Bangalore',	24),
+(25,	'Happilo Premium Super Snack Himalayan Salt & Pepper Chickpeas',	25),
+(26,	'Happilo Premium Super Snack Magic Masala Chickpeas 110g, Crunchy and Delicious, Super Healthy',	26),
+(27,	'Happilo Premium Super Snack Chili Garlic Chickpeas',	27),
+(28,	'Happilo Marvel Black Panther Edition International Peri Peri Nut Party Snack',	28),
+(29,	'Happilo Marvel Dr. Strange Edition Oven Roasted Cashews Spicy Chilly Garlic',	29),
+(30,	'Happilo Marvel Dr. Strange Edition Oven Roasted Cashews Spicy Chilly Garlic',	30),
+(31,	'Happilo Marvel Black Panther Edition International Peri Peri Nut Party Snack',	31),
+(32,	'Happilo Marvel Black Panther Edition Oven Roasted Cashews Black Pepper',	32),
+(33,	'Happilo Marvel Captain America Edition Natural Whole Cashews',	33);
 
 DROP TABLE IF EXISTS "tbl_product_category";
 DROP SEQUENCE IF EXISTS tbl_categories_id_seq;
-CREATE SEQUENCE tbl_categories_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1;
+CREATE SEQUENCE tbl_categories_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 START 33 CACHE 1;
 
 CREATE TABLE "public"."tbl_product_category" (
     "id" integer DEFAULT nextval('tbl_categories_id_seq') NOT NULL,
@@ -338,11 +514,34 @@ INSERT INTO "tbl_product_category" ("id", "name") VALUES
 (7,	'Nuts'),
 (8,	'Nuts'),
 (9,	'Nuts'),
-(10,	'Nuts');
+(10,	'Nuts'),
+(11,	'Dry Fruit Bars'),
+(12,	'Dry Fruit Bars'),
+(13,	'Dry Fruit Bars'),
+(14,	'Dry Fruit Bars'),
+(15,	'Spreads'),
+(16,	'Spreads'),
+(17,	'Spreads'),
+(18,	'Spreads'),
+(19,	'Brittle & Barfi'),
+(20,	'Brittle & Barfi'),
+(21,	'Brittle & Barfi'),
+(22,	'Brittle & Barfi'),
+(23,	'Brittle & Barfi'),
+(24,	'Party Snacks'),
+(25,	'Party Snacks'),
+(26,	'Party Snacks'),
+(27,	'Party Snacks'),
+(28,	'Party Snacks'),
+(29,	'Party Snacks'),
+(30,	'Marvel Snacks'),
+(31,	'Marvel Snacks'),
+(32,	'Marvel Snacks'),
+(33,	'Marvel Snacks');
 
 DROP TABLE IF EXISTS "tbl_product_description";
 DROP SEQUENCE IF EXISTS tbl_product_description_id_seq;
-CREATE SEQUENCE tbl_product_description_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1;
+CREATE SEQUENCE tbl_product_description_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 START 132 CACHE 1;
 
 CREATE TABLE "public"."tbl_product_description" (
     "id" integer DEFAULT nextval('tbl_product_description_id_seq') NOT NULL,
@@ -395,11 +594,103 @@ INSERT INTO "tbl_product_description" ("id", "product_id", "name", "type", "deta
 (37,	10,	'Perfect Harmony',	'Description',	'Discover the perfect harmony of sweet and savory with our pecans.'),
 (38,	10,	'Versatile Snack',	'Description',	'Ideal for both snacking and adding a twist to dishes.'),
 (39,	10,	'',	'Ingredients',	'Candied pecans with a touch of salt.'),
-(40,	10,	'',	'Additional Information',	'Store in a dry place to maintain texture.');
+(40,	10,	'',	'Additional Information',	'Store in a dry place to maintain texture.'),
+(41,	11,	'Timeless Favorite',	'Description',	'Indulge in the timeless taste of our salted peanuts.'),
+(42,	11,	'Affordable Snack',	'Description',	'A budget-friendly choice for a satisfying snack.'),
+(43,	11,	'',	'Ingredients',	'Roasted peanuts with a hint of salt.'),
+(44,	11,	'',	'Additional Information',	'Shake well before consuming to evenly distribute salt.'),
+(45,	12,	'Timeless Favorite',	'Description',	'Indulge in the timeless taste of our salted peanuts.'),
+(46,	12,	'Affordable Snack',	'Description',	'A budget-friendly choice for a satisfying snack.'),
+(47,	12,	'',	'Ingredients',	'Roasted peanuts with a hint of salt.'),
+(48,	12,	'',	'Additional Information',	'Shake well before consuming to evenly distribute salt.'),
+(49,	13,	'Timeless Favorite',	'Description',	'Indulge in the timeless taste of our salted peanuts.'),
+(50,	13,	'Affordable Snack',	'Description',	'A budget-friendly choice for a satisfying snack.'),
+(51,	13,	'',	'Ingredients',	'Roasted peanuts with a hint of salt.'),
+(52,	13,	'',	'Additional Information',	'Shake well before consuming to evenly distribute salt.'),
+(53,	14,	'Timeless Favorite',	'Description',	'Indulge in the timeless taste of our salted peanuts.'),
+(54,	14,	'Affordable Snack',	'Description',	'A budget-friendly choice for a satisfying snack.'),
+(55,	14,	'',	'Ingredients',	'Roasted peanuts with a hint of salt.'),
+(56,	14,	'',	'Additional Information',	'Shake well before consuming to evenly distribute salt.'),
+(57,	15,	'Timeless Favorite',	'Description',	'Indulge in the timeless taste of our salted peanuts.'),
+(58,	15,	'Affordable Snack',	'Description',	'A budget-friendly choice for a satisfying snack.'),
+(59,	15,	'',	'Ingredients',	'Roasted peanuts with a hint of salt.'),
+(60,	15,	'',	'Additional Information',	'Shake well before consuming to evenly distribute salt.'),
+(61,	16,	'Timeless Favorite',	'Description',	'Indulge in the timeless taste of our salted peanuts.'),
+(62,	16,	'Affordable Snack',	'Description',	'A budget-friendly choice for a satisfying snack.'),
+(63,	16,	'',	'Ingredients',	'Roasted peanuts with a hint of salt.'),
+(64,	16,	'',	'Additional Information',	'Shake well before consuming to evenly distribute salt.'),
+(65,	17,	'Timeless Favorite',	'Description',	'Indulge in the timeless taste of our salted peanuts.'),
+(66,	17,	'Affordable Snack',	'Description',	'A budget-friendly choice for a satisfying snack.'),
+(67,	17,	'',	'Ingredients',	'Roasted peanuts with a hint of salt.'),
+(68,	17,	'',	'Additional Information',	'Shake well before consuming to evenly distribute salt.'),
+(69,	18,	'Timeless Favorite',	'Description',	'Indulge in the timeless taste of our salted peanuts.'),
+(70,	18,	'Affordable Snack',	'Description',	'A budget-friendly choice for a satisfying snack.'),
+(71,	18,	'',	'Ingredients',	'Roasted peanuts with a hint of salt.'),
+(72,	18,	'',	'Additional Information',	'Shake well before consuming to evenly distribute salt.'),
+(73,	19,	'Timeless Favorite',	'Description',	'Indulge in the timeless taste of our salted peanuts.'),
+(74,	19,	'Affordable Snack',	'Description',	'A budget-friendly choice for a satisfying snack.'),
+(75,	19,	'',	'Ingredients',	'Roasted peanuts with a hint of salt.'),
+(76,	19,	'',	'Additional Information',	'Shake well before consuming to evenly distribute salt.'),
+(77,	20,	'Timeless Favorite',	'Description',	'Indulge in the timeless taste of our salted peanuts.'),
+(78,	20,	'Affordable Snack',	'Description',	'A budget-friendly choice for a satisfying snack.'),
+(79,	20,	'',	'Ingredients',	'Roasted peanuts with a hint of salt.'),
+(80,	20,	'',	'Additional Information',	'Shake well before consuming to evenly distribute salt.'),
+(81,	21,	'Timeless Favorite',	'Description',	'Indulge in the timeless taste of our salted peanuts.'),
+(82,	21,	'Affordable Snack',	'Description',	'A budget-friendly choice for a satisfying snack.'),
+(83,	21,	'',	'Ingredients',	'Roasted peanuts with a hint of salt.'),
+(84,	21,	'',	'Additional Information',	'Shake well before consuming to evenly distribute salt.'),
+(85,	22,	'Timeless Favorite',	'Description',	'Indulge in the timeless taste of our salted peanuts.'),
+(86,	22,	'Affordable Snack',	'Description',	'A budget-friendly choice for a satisfying snack.'),
+(87,	22,	'',	'Ingredients',	'Roasted peanuts with a hint of salt.'),
+(88,	22,	'',	'Additional Information',	'Shake well before consuming to evenly distribute salt.'),
+(89,	23,	'Timeless Favorite',	'Description',	'Indulge in the timeless taste of our salted peanuts.'),
+(90,	23,	'Affordable Snack',	'Description',	'A budget-friendly choice for a satisfying snack.'),
+(91,	23,	'',	'Ingredients',	'Roasted peanuts with a hint of salt.'),
+(92,	23,	'',	'Additional Information',	'Shake well before consuming to evenly distribute salt.'),
+(93,	24,	'Timeless Favorite',	'Description',	'Indulge in the timeless taste of our salted peanuts.'),
+(94,	24,	'Affordable Snack',	'Description',	'A budget-friendly choice for a satisfying snack.'),
+(95,	24,	'',	'Ingredients',	'Roasted peanuts with a hint of salt.'),
+(96,	24,	'',	'Additional Information',	'Shake well before consuming to evenly distribute salt.'),
+(97,	25,	'Timeless Favorite',	'Description',	'Indulge in the timeless taste of our salted peanuts.'),
+(98,	25,	'Affordable Snack',	'Description',	'A budget-friendly choice for a satisfying snack.'),
+(99,	25,	'',	'Ingredients',	'Roasted peanuts with a hint of salt.'),
+(100,	25,	'',	'Additional Information',	'Shake well before consuming to evenly distribute salt.'),
+(101,	26,	'Timeless Favorite',	'Description',	'Indulge in the timeless taste of our salted peanuts.'),
+(102,	26,	'Affordable Snack',	'Description',	'A budget-friendly choice for a satisfying snack.'),
+(103,	26,	'',	'Ingredients',	'Roasted peanuts with a hint of salt.'),
+(104,	26,	'',	'Additional Information',	'Shake well before consuming to evenly distribute salt.'),
+(105,	27,	'Timeless Favorite',	'Description',	'Indulge in the timeless taste of our salted peanuts.'),
+(106,	27,	'Affordable Snack',	'Description',	'A budget-friendly choice for a satisfying snack.'),
+(107,	27,	'',	'Ingredients',	'Roasted peanuts with a hint of salt.'),
+(108,	27,	'',	'Additional Information',	'Shake well before consuming to evenly distribute salt.'),
+(109,	28,	'Timeless Favorite',	'Description',	'Indulge in the timeless taste of our salted peanuts.'),
+(110,	28,	'Affordable Snack',	'Description',	'A budget-friendly choice for a satisfying snack.'),
+(111,	28,	'',	'Ingredients',	'Roasted peanuts with a hint of salt.'),
+(112,	28,	'',	'Additional Information',	'Shake well before consuming to evenly distribute salt.'),
+(113,	29,	'Timeless Favorite',	'Description',	'Indulge in the timeless taste of our salted peanuts.'),
+(114,	29,	'Affordable Snack',	'Description',	'A budget-friendly choice for a satisfying snack.'),
+(115,	29,	'',	'Ingredients',	'Roasted peanuts with a hint of salt.'),
+(116,	29,	'',	'Additional Information',	'Shake well before consuming to evenly distribute salt.'),
+(117,	30,	'Timeless Favorite',	'Description',	'Indulge in the timeless taste of our salted peanuts.'),
+(118,	30,	'Affordable Snack',	'Description',	'A budget-friendly choice for a satisfying snack.'),
+(119,	30,	'',	'Ingredients',	'Roasted peanuts with a hint of salt.'),
+(120,	30,	'',	'Additional Information',	'Shake well before consuming to evenly distribute salt.'),
+(121,	31,	'Timeless Favorite',	'Description',	'Indulge in the timeless taste of our salted peanuts.'),
+(122,	31,	'Affordable Snack',	'Description',	'A budget-friendly choice for a satisfying snack.'),
+(123,	31,	'',	'Ingredients',	'Roasted peanuts with a hint of salt.'),
+(124,	31,	'',	'Additional Information',	'Shake well before consuming to evenly distribute salt.'),
+(125,	32,	'Timeless Favorite',	'Description',	'Indulge in the timeless taste of our salted peanuts.'),
+(126,	32,	'Affordable Snack',	'Description',	'A budget-friendly choice for a satisfying snack.'),
+(127,	32,	'',	'Ingredients',	'Roasted peanuts with a hint of salt.'),
+(128,	32,	'',	'Additional Information',	'Shake well before consuming to evenly distribute salt.'),
+(129,	33,	'Timeless Favorite',	'Description',	'Indulge in the timeless taste of our salted peanuts.'),
+(130,	33,	'Affordable Snack',	'Description',	'A budget-friendly choice for a satisfying snack.'),
+(131,	33,	'',	'Ingredients',	'Roasted peanuts with a hint of salt.'),
+(132,	33,	'',	'Additional Information',	'Shake well before consuming to evenly distribute salt.');
 
 DROP TABLE IF EXISTS "tbl_product_discounts";
 DROP SEQUENCE IF EXISTS tbl_discounts_id_seq;
-CREATE SEQUENCE tbl_discounts_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1;
+CREATE SEQUENCE tbl_discounts_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 START 32 CACHE 1;
 
 CREATE TABLE "public"."tbl_product_discounts" (
     "id" integer DEFAULT nextval('tbl_discounts_id_seq') NOT NULL,
@@ -420,11 +711,34 @@ INSERT INTO "tbl_product_discounts" ("id", "product_id", "seller_id", "discount_
 (6,	7,	1,	10,	'2023-08-01',	'2023-08-07'),
 (7,	8,	1,	12,	'2023-08-04',	'2023-08-11'),
 (8,	9,	1,	10,	'2023-08-02',	'2023-08-09'),
-(9,	10,	1,	10,	'2023-08-06',	'2023-08-13');
+(9,	10,	1,	10,	'2023-08-06',	'2023-08-13'),
+(10,	11,	1,	10,	'2023-08-02',	'2023-08-09'),
+(11,	12,	1,	10,	'2023-08-02',	'2023-08-09'),
+(12,	13,	1,	10,	'2023-08-02',	'2023-08-09'),
+(13,	14,	1,	10,	'2023-08-02',	'2023-08-09'),
+(14,	15,	1,	10,	'2023-08-02',	'2023-08-09'),
+(15,	16,	1,	10,	'2023-08-02',	'2023-08-09'),
+(16,	17,	1,	10,	'2023-08-02',	'2023-08-09'),
+(17,	18,	1,	10,	'2023-08-02',	'2023-08-09'),
+(18,	19,	1,	10,	'2023-08-02',	'2023-08-09'),
+(19,	20,	1,	10,	'2023-08-02',	'2023-08-09'),
+(20,	21,	1,	10,	'2023-08-02',	'2023-08-09'),
+(21,	22,	1,	10,	'2023-08-02',	'2023-08-09'),
+(22,	23,	1,	10,	'2023-08-02',	'2023-08-09'),
+(23,	24,	1,	10,	'2023-08-02',	'2023-08-09'),
+(24,	25,	1,	10,	'2023-08-02',	'2023-08-09'),
+(25,	26,	1,	10,	'2023-08-02',	'2023-08-09'),
+(26,	27,	1,	10,	'2023-08-02',	'2023-08-09'),
+(27,	28,	1,	10,	'2023-08-02',	'2023-08-09'),
+(28,	29,	1,	10,	'2023-08-02',	'2023-08-09'),
+(29,	30,	1,	10,	'2023-08-02',	'2023-08-09'),
+(30,	31,	1,	10,	'2023-08-02',	'2023-08-09'),
+(31,	32,	1,	10,	'2023-08-02',	'2023-08-09'),
+(32,	33,	1,	10,	'2023-08-02',	'2023-08-09');
 
 DROP TABLE IF EXISTS "tbl_product_images";
 DROP SEQUENCE IF EXISTS tbl_product_images_id_seq;
-CREATE SEQUENCE tbl_product_images_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1;
+CREATE SEQUENCE tbl_product_images_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 START 279 CACHE 1;
 
 CREATE TABLE "public"."tbl_product_images" (
     "id" integer DEFAULT nextval('tbl_product_images_id_seq') NOT NULL,
@@ -527,11 +841,187 @@ INSERT INTO "tbl_product_images" ("id", "product_id", "image_id") VALUES
 (100,	10,	101),
 (101,	10,	102),
 (102,	10,	103),
-(103,	10,	104);
+(103,	10,	104),
+(104,	11,	105),
+(105,	11,	106),
+(106,	11,	107),
+(107,	11,	108),
+(108,	11,	109),
+(109,	11,	110),
+(110,	11,	111),
+(111,	12,	112),
+(112,	12,	113),
+(113,	12,	114),
+(114,	12,	115),
+(115,	12,	116),
+(116,	12,	117),
+(117,	12,	118),
+(118,	12,	119),
+(119,	13,	120),
+(120,	13,	121),
+(121,	13,	122),
+(122,	13,	123),
+(123,	13,	124),
+(124,	13,	125),
+(125,	13,	126),
+(126,	13,	127),
+(127,	14,	128),
+(128,	14,	129),
+(129,	14,	130),
+(130,	14,	131),
+(131,	14,	132),
+(132,	14,	133),
+(133,	14,	134),
+(134,	14,	135),
+(135,	15,	136),
+(136,	15,	137),
+(137,	15,	138),
+(138,	15,	139),
+(139,	15,	140),
+(140,	15,	141),
+(141,	15,	142),
+(142,	15,	143),
+(143,	16,	144),
+(144,	16,	145),
+(145,	16,	146),
+(146,	16,	147),
+(147,	16,	148),
+(148,	16,	149),
+(149,	16,	150),
+(150,	16,	151),
+(151,	17,	152),
+(152,	17,	153),
+(153,	17,	154),
+(154,	17,	155),
+(155,	17,	156),
+(156,	17,	157),
+(157,	17,	158),
+(158,	17,	159),
+(159,	18,	160),
+(160,	18,	161),
+(161,	18,	162),
+(162,	18,	163),
+(163,	18,	164),
+(164,	18,	165),
+(165,	18,	166),
+(166,	18,	167),
+(167,	19,	168),
+(168,	19,	169),
+(169,	19,	170),
+(170,	19,	171),
+(171,	19,	172),
+(172,	19,	173),
+(173,	19,	174),
+(174,	19,	175),
+(175,	20,	176),
+(176,	20,	177),
+(177,	20,	178),
+(178,	20,	179),
+(179,	20,	180),
+(180,	20,	181),
+(181,	20,	182),
+(182,	20,	183),
+(183,	21,	176),
+(184,	21,	177),
+(185,	21,	178),
+(186,	21,	179),
+(187,	21,	180),
+(188,	21,	181),
+(189,	21,	182),
+(190,	21,	183),
+(191,	22,	184),
+(192,	22,	185),
+(193,	22,	186),
+(194,	22,	187),
+(195,	22,	188),
+(196,	22,	189),
+(197,	22,	190),
+(198,	22,	191),
+(199,	23,	192),
+(200,	23,	193),
+(201,	23,	194),
+(202,	23,	195),
+(203,	23,	196),
+(204,	23,	197),
+(205,	23,	198),
+(206,	23,	199),
+(207,	24,	200),
+(208,	24,	201),
+(209,	24,	202),
+(210,	24,	203),
+(211,	24,	204),
+(212,	24,	205),
+(213,	25,	206),
+(214,	25,	207),
+(215,	25,	208),
+(216,	25,	209),
+(217,	25,	210),
+(218,	25,	211),
+(219,	25,	212),
+(220,	26,	213),
+(221,	26,	214),
+(222,	26,	215),
+(223,	26,	216),
+(224,	26,	217),
+(225,	26,	218),
+(226,	26,	219),
+(227,	27,	220),
+(228,	27,	221),
+(229,	27,	222),
+(230,	27,	223),
+(231,	27,	224),
+(232,	27,	225),
+(233,	27,	226),
+(234,	28,	227),
+(235,	28,	228),
+(236,	28,	229),
+(237,	28,	230),
+(238,	28,	231),
+(239,	28,	232),
+(240,	28,	233),
+(241,	28,	234),
+(242,	29,	235),
+(243,	29,	236),
+(244,	29,	237),
+(245,	29,	238),
+(246,	29,	239),
+(247,	29,	240),
+(248,	29,	241),
+(249,	30,	235),
+(250,	30,	236),
+(251,	30,	237),
+(252,	30,	238),
+(253,	30,	239),
+(254,	30,	240),
+(255,	30,	241),
+(256,	31,	227),
+(257,	31,	228),
+(258,	31,	229),
+(259,	31,	230),
+(260,	31,	231),
+(261,	31,	232),
+(262,	31,	233),
+(263,	31,	234),
+(264,	32,	242),
+(265,	32,	243),
+(266,	32,	244),
+(267,	32,	245),
+(268,	32,	246),
+(269,	32,	247),
+(270,	32,	248),
+(271,	32,	249),
+(272,	33,	250),
+(273,	33,	251),
+(274,	33,	252),
+(275,	33,	253),
+(276,	33,	254),
+(277,	33,	255),
+(278,	33,	256),
+(279,	33,	257);
 
 DROP TABLE IF EXISTS "tbl_product_variant";
 DROP SEQUENCE IF EXISTS tbl_quantity_price_id_seq;
-CREATE SEQUENCE tbl_quantity_price_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1;
+CREATE SEQUENCE tbl_quantity_price_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 START 99 CACHE 1;
 
 CREATE TABLE "public"."tbl_product_variant" (
     "id" integer DEFAULT nextval('tbl_quantity_price_id_seq') NOT NULL,
@@ -571,11 +1061,80 @@ INSERT INTO "tbl_product_variant" ("id", "product_id", "variant_name", "price", 
 (27,	9,	'600g',	500,	4),
 (28,	10,	'180g',	320,	1),
 (29,	10,	'360g',	600,	2),
-(30,	10,	'750g',	1100,	4);
+(30,	10,	'750g',	1100,	4),
+(31,	11,	'150g',	150,	1),
+(32,	11,	'300g',	280,	2),
+(33,	11,	'350g',	340,	2),
+(34,	12,	'150g',	150,	1),
+(35,	12,	'300g',	280,	2),
+(36,	12,	'350g',	340,	2),
+(37,	13,	'150g',	150,	1),
+(38,	13,	'300g',	280,	2),
+(39,	13,	'350g',	340,	2),
+(40,	14,	'15g',	150,	12),
+(41,	14,	'30g',	280,	6),
+(42,	14,	'350g',	340,	2),
+(43,	15,	'200g',	295,	1),
+(44,	15,	'300g',	335,	1),
+(45,	15,	'350g',	380,	1),
+(46,	16,	'200g',	280,	1),
+(47,	16,	'300g',	320,	1),
+(48,	16,	'350g',	355,	1),
+(49,	17,	'200g',	280,	1),
+(50,	17,	'300g',	320,	1),
+(51,	17,	'350g',	355,	1),
+(52,	18,	'200g',	280,	1),
+(53,	18,	'300g',	320,	1),
+(54,	18,	'350g',	355,	1),
+(55,	19,	'204g',	540,	12),
+(56,	19,	'300g',	720,	14),
+(57,	19,	'350g',	355,	1),
+(58,	20,	'204g',	540,	12),
+(59,	20,	'300g',	720,	14),
+(60,	20,	'350g',	355,	1),
+(61,	21,	'204g',	540,	12),
+(62,	21,	'300g',	720,	14),
+(63,	21,	'350g',	355,	1),
+(64,	22,	'204g',	475,	12),
+(65,	22,	'300g',	675,	14),
+(66,	22,	'350g',	875,	1),
+(67,	23,	'204g',	475,	12),
+(68,	23,	'300g',	675,	14),
+(69,	23,	'350g',	875,	1),
+(70,	24,	'204g',	110,	50),
+(71,	24,	'300g',	220,	50),
+(72,	24,	'350g',	420,	60),
+(73,	25,	'110g',	99,	2),
+(74,	25,	'200g',	199,	4),
+(75,	25,	'300g',	299,	6),
+(76,	26,	'110g',	99,	2),
+(77,	26,	'200g',	199,	4),
+(78,	26,	'300g',	299,	6),
+(79,	27,	'110g',	99,	2),
+(80,	27,	'200g',	199,	4),
+(81,	27,	'300g',	299,	6),
+(82,	28,	'150g',	325,	3),
+(83,	28,	'200g',	380,	4),
+(84,	28,	'300g',	449,	6),
+(85,	29,	'150g',	325,	3),
+(86,	29,	'200g',	380,	4),
+(87,	29,	'300g',	449,	6),
+(88,	30,	'150g',	325,	3),
+(89,	30,	'200g',	380,	4),
+(90,	30,	'300g',	449,	6),
+(91,	31,	'150g',	325,	3),
+(92,	31,	'200g',	380,	4),
+(93,	31,	'300g',	449,	6),
+(94,	32,	'150g',	325,	3),
+(95,	32,	'200g',	380,	4),
+(96,	32,	'300g',	449,	6),
+(97,	33,	'150g',	325,	3),
+(98,	33,	'200g',	380,	4),
+(99,	33,	'300g',	449,	6);
 
 DROP TABLE IF EXISTS "tbl_rating";
 DROP SEQUENCE IF EXISTS tbl_rating_id_seq;
-CREATE SEQUENCE tbl_rating_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1;
+CREATE SEQUENCE tbl_rating_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 START 1 CACHE 1;
 
 CREATE TABLE "public"."tbl_rating" (
     "id" integer DEFAULT nextval('tbl_rating_id_seq') NOT NULL,
@@ -590,7 +1149,7 @@ CREATE TABLE "public"."tbl_rating" (
 
 DROP TABLE IF EXISTS "tbl_reason_to_buy";
 DROP SEQUENCE IF EXISTS tbl_reason_to_buy_id_seq;
-CREATE SEQUENCE tbl_reason_to_buy_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1;
+CREATE SEQUENCE tbl_reason_to_buy_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 START 1 CACHE 1;
 
 CREATE TABLE "public"."tbl_reason_to_buy" (
     "id" integer DEFAULT nextval('tbl_reason_to_buy_id_seq') NOT NULL,
@@ -602,7 +1161,7 @@ CREATE TABLE "public"."tbl_reason_to_buy" (
 
 DROP TABLE IF EXISTS "tbl_sellers";
 DROP SEQUENCE IF EXISTS tbl_sellers_id_seq;
-CREATE SEQUENCE tbl_sellers_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1;
+CREATE SEQUENCE tbl_sellers_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 START 1 CACHE 1;
 
 CREATE TABLE "public"."tbl_sellers" (
     "id" integer DEFAULT nextval('tbl_sellers_id_seq') NOT NULL,
@@ -617,7 +1176,7 @@ INSERT INTO "tbl_sellers" ("id", "name", "email", "phone") VALUES
 
 DROP TABLE IF EXISTS "tbl_stock";
 DROP SEQUENCE IF EXISTS tbl_stock_id_seq;
-CREATE SEQUENCE tbl_stock_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1;
+CREATE SEQUENCE tbl_stock_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 START 1 CACHE 1;
 
 CREATE TABLE "public"."tbl_stock" (
     "id" integer DEFAULT nextval('tbl_stock_id_seq') NOT NULL,
@@ -632,7 +1191,7 @@ COMMENT ON COLUMN "public"."tbl_stock"."varient_id" IS 'one product can have man
 
 DROP TABLE IF EXISTS "tbl_wishlist";
 DROP SEQUENCE IF EXISTS tbl_wishlist_id_seq;
-CREATE SEQUENCE tbl_wishlist_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1;
+CREATE SEQUENCE tbl_wishlist_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 START 1 CACHE 1;
 
 CREATE TABLE "public"."tbl_wishlist" (
     "id" integer DEFAULT nextval('tbl_wishlist_id_seq') NOT NULL,
@@ -643,7 +1202,7 @@ CREATE TABLE "public"."tbl_wishlist" (
 
 DROP TABLE IF EXISTS "tbl_wishlist_item";
 DROP SEQUENCE IF EXISTS wishlist_item_id_seq;
-CREATE SEQUENCE wishlist_item_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1;
+CREATE SEQUENCE wishlist_item_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 START 1 CACHE 1;
 
 CREATE TABLE "public"."tbl_wishlist_item" (
     "id" integer DEFAULT nextval('wishlist_item_id_seq') NOT NULL,
@@ -704,4 +1263,4 @@ ALTER TABLE ONLY "public"."tbl_wishlist_item" ADD CONSTRAINT "wishlist_item_prod
 ALTER TABLE ONLY "public"."tbl_wishlist_item" ADD CONSTRAINT "wishlist_item_seller_id_fkey" FOREIGN KEY (seller_id) REFERENCES tbl_sellers(id) NOT DEFERRABLE;
 ALTER TABLE ONLY "public"."tbl_wishlist_item" ADD CONSTRAINT "wishlist_item_wishlist_id_fkey" FOREIGN KEY (wishlist_id) REFERENCES tbl_wishlist(id) NOT DEFERRABLE;
 
--- 2023-08-27 19:46:19.296105+05:30
+-- 2023-09-01 14:22:01.057516+05:30
